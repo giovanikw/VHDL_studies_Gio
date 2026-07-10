@@ -11,8 +11,8 @@ generic (numofbits : integer := 4);
 
 port
 (
-	An, Bn : in std_logic_vector((2*numofbits)-1 downto 0);
-	S0 : in std_logic_vector(numofbits-1 downto 0);
+	An, Bn : in std_logic_vector(numofbits-1 downto 0);
+	Sn : out std_logic_vector(numofbits-1 downto 0)
 );
 
 end rca_adder;
@@ -21,7 +21,9 @@ end rca_adder;
 
 architecture behaviour of rca_adder is
 
-component fullader is
+--component
+
+component fulladder is
 	port
 	(
 		A, B, Cin : in std_logic;
@@ -31,13 +33,21 @@ component fullader is
 end component;
 
 --signals
-signal Cn : inout std_logic_vector(numofbits);
+signal Cn : std_logic_vector(numofbits downto 0);
+
 
 begin
 
 	rca_addergen : for i in 0 to numofbits-1 generate
-			rca_addergen : entity work.fullader
+			rca_addergen : entity work.fulladder
 				port map
-
+				(
+					A => An(i),
+					B => Bn(i),
+					Sout => Sn(i),
+					Cin => Cn(i),
+					Cout => Cn(i+1)
+				);
+	end generate rca_addergen;
 
 end behaviour;

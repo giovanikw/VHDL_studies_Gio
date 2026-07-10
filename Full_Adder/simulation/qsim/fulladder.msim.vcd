@@ -3,7 +3,7 @@ $comment
 		vcd file fulladder.msim.vcd -direction
 $end
 $date
-	Fri Jul 10 16:37:03 2026
+	Fri Jul 10 18:33:29 2026
 $end
 $version
 	Questa Altera Starter FPGA Edition Version 2025.2

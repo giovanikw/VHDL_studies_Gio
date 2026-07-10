@@ -27,6 +27,7 @@ o-quiet -auto_acc_if_foreign -work work -L cyclonev -L altera -L altera_mf -L 22
 tCvgOpt 0
 n@_opt
 OL;O;2025.2;82
+R1
 Efulladder
 Z2 w1783712221
 Z3 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
@@ -41,19 +42,19 @@ R1
 Z10 8fulladder.vho
 Z11 Ffulladder.vho
 l0
-L37 1
+Z12 L37 1
 V94_Y_oO`[N>12]23VXSOm0
 !s100 1?VOJPO39>=R2T4jn7^oz1
-Z12 OL;C;2025.2;82
+Z13 OL;C;2025.2;82
 32
-Z13 !s110 1783712222
+Z14 !s110 1783712222
 !i10b 1
-Z14 !s108 1783712222.000000
-Z15 !s90 -work|work|fulladder.vho|
-Z16 !s107 fulladder.vho|
+Z15 !s108 1783712222.000000
+Z16 !s90 -work|work|fulladder.vho|
+Z17 !s107 fulladder.vho|
 !i113 0
-Z17 o-work work
-Z18 tExplicit 1 CvgOpt 0
+Z18 o-work work
+Z19 tExplicit 1 CvgOpt 0
 Astructure
 R3
 R4
@@ -68,38 +69,38 @@ l73
 L47 130
 V>1M;CV37Id0aYYc==YnRO3
 !s100 nbMaB@_:zmnA]Z3mEQQO90
-R12
-32
 R13
-!i10b 1
+32
 R14
+!i10b 1
 R15
 R16
-!i113 0
 R17
+!i113 0
 R18
+R19
 Efulladder_vhd_vec_tst
-Z19 w1783712220
+Z20 w1783712220
 R7
 R8
 !i122 5
 R1
-Z20 8Waveform.vwf.vht
-Z21 FWaveform.vwf.vht
+Z21 8Waveform.vwf.vht
+Z22 FWaveform.vwf.vht
 l0
-L32 1
+Z23 L32 1
 VOizP<AXi`m26;5^OJ`8H<3
 !s100 jZ;oIC^VA=gWD;m<99@jo3
-R12
-32
 R13
-!i10b 1
+32
 R14
-Z22 !s90 -work|work|Waveform.vwf.vht|
-Z23 !s107 Waveform.vwf.vht|
+!i10b 1
+R15
+Z24 !s90 -work|work|Waveform.vwf.vht|
+Z25 !s107 Waveform.vwf.vht|
 !i113 0
-R17
 R18
+R19
 Afulladder_arch
 R7
 R8
@@ -109,13 +110,105 @@ l51
 L34 68
 VZF[P2Ie7JC0b757;Cb@Qn0
 !s100 9]TCG2QFNXIb>60TGVYe41
-R12
-32
 R13
-!i10b 1
+32
 R14
-R22
-R23
+!i10b 1
+R15
+R24
+R25
 !i113 0
-R17
 R18
+R19
+Erca_adder
+Z26 w1783719208
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+!i122 8
+R1
+R10
+R11
+l0
+R12
+V>E_E;3iS`IK`3^0I0G@_V0
+!s100 JU:]YXR7clVL=3Xj^Z8EL1
+R13
+32
+Z27 !s110 1783719209
+!i10b 1
+Z28 !s108 1783719209.000000
+R16
+R17
+!i113 0
+R18
+R19
+Astructure
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+DEx4 work 9 rca_adder 0 22 >E_E;3iS`IK`3^0I0G@_V0
+!i122 8
+l85
+L45 284
+V3`i<STW0f]T0DE=z=UNYS0
+!s100 `POnPUo_cLb4SVI3fIcce1
+R13
+32
+R27
+!i10b 1
+R28
+R16
+R17
+!i113 0
+R18
+R19
+Erca_adder_vhd_vec_tst
+Z29 w1783719207
+R7
+R8
+!i122 9
+R1
+R21
+R22
+l0
+R23
+VLfP=kkjIMgAFoe5I1Q3oZ0
+!s100 K:bnVaMRWJ8<c=D5nn^k:1
+R13
+32
+R27
+!i10b 1
+R28
+R24
+R25
+!i113 0
+R18
+R19
+Arca_adder_arch
+R7
+R8
+Z30 DEx4 work 21 rca_adder_vhd_vec_tst 0 22 LfP=kkjIMgAFoe5I1Q3oZ0
+!i122 9
+l47
+Z31 L34 450
+Z32 Vc=OdBzHgW[6[MacW84ka[3
+Z33 !s100 dM6Z1I6_ZNOSX3N9;;FCA0
+R13
+32
+R27
+!i10b 1
+R28
+R24
+R25
+!i113 0
+R18
+R19
