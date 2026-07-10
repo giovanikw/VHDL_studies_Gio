@@ -1,0 +1,10 @@
+1 23 altera_lnsim_components 4 fast 64 /home/gio/altera_lite/25.1std/questa_fse/intel/vhdl/altera_lnsim 0 80 0 0 5608 0
+1 18 cyclonev_atom_pack 4 fast 60 /home/gio/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 0 80 0 0 620 0
+1 19 cyclonev_components 4 fast 60 /home/gio/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 0 80 0 0 3091 0
+1 18 cyclonev_atom_pack 4 body 60 /home/gio/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 0 80 0 0 620 0
+1 19 cyclonev_lcell_comb 16 vital_lcell_comb 60 /home/gio/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 2 65 0 0 879 0
+1 19 cyclonev_lcell_comb 16 vital_lcell_comb 60 /home/gio/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 1 65 0 0 879 0
+1 16 cyclonev_io_ibuf 4 arch 60 /home/gio/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 1 65 0 0 221 0
+1 16 cyclonev_io_obuf 4 arch 60 /home/gio/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 1 65 0 0 381 0
+1 9 fulladder 9 structure 58 /home/gio/VHDL_studies_Gio/Full_Adder/simulation/qsim/work 1 65 0 0 276 0
+1 21 fulladder_vhd_vec_tst 14 fulladder_arch 58 /home/gio/VHDL_studies_Gio/Full_Adder/simulation/qsim/work 1 65 0 0 76 0

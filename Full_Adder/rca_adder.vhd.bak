@@ -1,0 +1,8 @@
+--libs
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+--define entity
+
+entity rca_adder is
