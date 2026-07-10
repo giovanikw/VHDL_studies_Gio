@@ -39,6 +39,7 @@ begin
 					Clk => CLK,
 					Rst => RST);
 	end generate latchgen;
+	Carry(0) <= Datain;
 	
 	
 		
