@@ -12,7 +12,8 @@ generic (numofbits : integer := 4);
 port
 (
 	An, Bn : in std_logic_vector(numofbits-1 downto 0);
-	Sn : out std_logic_vector(numofbits-1 downto 0)
+	Sn : out std_logic_vector(numofbits-1 downto 0);
+	Cin0 : in std_logic
 );
 
 end rca_adder;
@@ -49,5 +50,6 @@ begin
 					Cout => Cn(i+1)
 				);
 	end generate rca_addergen;
+	Cn(0) <= Cin0;
 
 end behaviour;

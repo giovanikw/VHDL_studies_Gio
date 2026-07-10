@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition"
 
--- DATE "07/10/2026 18:33:28"
+-- DATE "07/10/2026 20:53:44"
 
 -- 
 -- Device: Altera 5CGXFC7C7F23C8 Package FBGA484
@@ -38,7 +38,8 @@ ENTITY 	rca_adder IS
     PORT (
 	An : IN std_logic_vector(3 DOWNTO 0);
 	Bn : IN std_logic_vector(3 DOWNTO 0);
-	Sn : OUT std_logic_vector(3 DOWNTO 0)
+	Sn : OUT std_logic_vector(3 DOWNTO 0);
+	Cin0 : IN std_logic
 	);
 END rca_adder;
 
@@ -55,50 +56,55 @@ SIGNAL ww_devpor : std_logic;
 SIGNAL ww_An : std_logic_vector(3 DOWNTO 0);
 SIGNAL ww_Bn : std_logic_vector(3 DOWNTO 0);
 SIGNAL ww_Sn : std_logic_vector(3 DOWNTO 0);
+SIGNAL ww_Cin0 : std_logic;
 SIGNAL \Sn[0]~output_o\ : std_logic;
 SIGNAL \Sn[1]~output_o\ : std_logic;
 SIGNAL \Sn[2]~output_o\ : std_logic;
 SIGNAL \Sn[3]~output_o\ : std_logic;
+SIGNAL \Cin0~input_o\ : std_logic;
 SIGNAL \An[0]~input_o\ : std_logic;
 SIGNAL \Bn[0]~input_o\ : std_logic;
-SIGNAL \rca_addergen:0:rca_addergen|s1~combout\ : std_logic;
+SIGNAL \rca_addergen:0:rca_addergen|Sout~combout\ : std_logic;
 SIGNAL \An[1]~input_o\ : std_logic;
 SIGNAL \Bn[1]~input_o\ : std_logic;
 SIGNAL \rca_addergen:1:rca_addergen|Sout~combout\ : std_logic;
+SIGNAL \rca_addergen:1:rca_addergen|Cout~combout\ : std_logic;
 SIGNAL \An[2]~input_o\ : std_logic;
 SIGNAL \Bn[2]~input_o\ : std_logic;
 SIGNAL \rca_addergen:2:rca_addergen|Sout~combout\ : std_logic;
-SIGNAL \rca_addergen:1:rca_addergen|Cout~combout\ : std_logic;
 SIGNAL \An[3]~input_o\ : std_logic;
 SIGNAL \Bn[3]~input_o\ : std_logic;
 SIGNAL \rca_addergen:3:rca_addergen|Sout~combout\ : std_logic;
 SIGNAL \rca_addergen:1:rca_addergen|ALT_INV_Cout~combout\ : std_logic;
 SIGNAL \ALT_INV_Bn[3]~input_o\ : std_logic;
 SIGNAL \ALT_INV_An[3]~input_o\ : std_logic;
-SIGNAL \ALT_INV_Bn[2]~input_o\ : std_logic;
 SIGNAL \ALT_INV_An[2]~input_o\ : std_logic;
 SIGNAL \ALT_INV_Bn[1]~input_o\ : std_logic;
 SIGNAL \ALT_INV_An[1]~input_o\ : std_logic;
 SIGNAL \ALT_INV_Bn[0]~input_o\ : std_logic;
 SIGNAL \ALT_INV_An[0]~input_o\ : std_logic;
+SIGNAL \ALT_INV_Cin0~input_o\ : std_logic;
+SIGNAL \ALT_INV_Bn[2]~input_o\ : std_logic;
 
 BEGIN
 
 ww_An <= An;
 ww_Bn <= Bn;
 Sn <= ww_Sn;
+ww_Cin0 <= Cin0;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
 \rca_addergen:1:rca_addergen|ALT_INV_Cout~combout\ <= NOT \rca_addergen:1:rca_addergen|Cout~combout\;
 \ALT_INV_Bn[3]~input_o\ <= NOT \Bn[3]~input_o\;
 \ALT_INV_An[3]~input_o\ <= NOT \An[3]~input_o\;
-\ALT_INV_Bn[2]~input_o\ <= NOT \Bn[2]~input_o\;
 \ALT_INV_An[2]~input_o\ <= NOT \An[2]~input_o\;
 \ALT_INV_Bn[1]~input_o\ <= NOT \Bn[1]~input_o\;
 \ALT_INV_An[1]~input_o\ <= NOT \An[1]~input_o\;
 \ALT_INV_Bn[0]~input_o\ <= NOT \Bn[0]~input_o\;
 \ALT_INV_An[0]~input_o\ <= NOT \An[0]~input_o\;
+\ALT_INV_Cin0~input_o\ <= NOT \Cin0~input_o\;
+\ALT_INV_Bn[2]~input_o\ <= NOT \Bn[2]~input_o\;
 
 \Sn[0]~output\ : cyclonev_io_obuf
 -- pragma translate_off
@@ -108,7 +114,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \rca_addergen:0:rca_addergen|s1~combout\,
+	i => \rca_addergen:0:rca_addergen|Sout~combout\,
 	devoe => ww_devoe,
 	o => \Sn[0]~output_o\);
 
@@ -148,6 +154,16 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \Sn[3]~output_o\);
 
+\Cin0~input\ : cyclonev_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_Cin0,
+	o => \Cin0~input_o\);
+
 \An[0]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -168,20 +184,21 @@ PORT MAP (
 	i => ww_Bn(0),
 	o => \Bn[0]~input_o\);
 
-\rca_addergen:0:rca_addergen|s1\ : cyclonev_lcell_comb
+\rca_addergen:0:rca_addergen|Sout\ : cyclonev_lcell_comb
 -- Equation(s):
--- \rca_addergen:0:rca_addergen|s1~combout\ = !\An[0]~input_o\ $ (!\Bn[0]~input_o\)
+-- \rca_addergen:0:rca_addergen|Sout~combout\ = !\Cin0~input_o\ $ (!\An[0]~input_o\ $ (\Bn[0]~input_o\))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0110011001100110011001100110011001100110011001100110011001100110",
+	lut_mask => "0110100101101001011010010110100101101001011010010110100101101001",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_An[0]~input_o\,
-	datab => \ALT_INV_Bn[0]~input_o\,
-	combout => \rca_addergen:0:rca_addergen|s1~combout\);
+	dataa => \ALT_INV_Cin0~input_o\,
+	datab => \ALT_INV_An[0]~input_o\,
+	datac => \ALT_INV_Bn[0]~input_o\,
+	combout => \rca_addergen:0:rca_addergen|Sout~combout\);
 
 \An[1]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
@@ -205,20 +222,41 @@ PORT MAP (
 
 \rca_addergen:1:rca_addergen|Sout\ : cyclonev_lcell_comb
 -- Equation(s):
--- \rca_addergen:1:rca_addergen|Sout~combout\ = !\An[1]~input_o\ $ (!\Bn[1]~input_o\ $ (((\An[0]~input_o\ & \Bn[0]~input_o\))))
+-- \rca_addergen:1:rca_addergen|Sout~combout\ = ( \Bn[1]~input_o\ & ( !\An[1]~input_o\ $ (((!\Cin0~input_o\ & (\An[0]~input_o\ & \Bn[0]~input_o\)) # (\Cin0~input_o\ & ((\Bn[0]~input_o\) # (\An[0]~input_o\))))) ) ) # ( !\Bn[1]~input_o\ & ( !\An[1]~input_o\ $ 
+-- (((!\Cin0~input_o\ & ((!\An[0]~input_o\) # (!\Bn[0]~input_o\))) # (\Cin0~input_o\ & (!\An[0]~input_o\ & !\Bn[0]~input_o\)))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0001111011100001000111101110000100011110111000010001111011100001",
+	lut_mask => "0001011111101000111010000001011100010111111010001110100000010111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_An[0]~input_o\,
-	datab => \ALT_INV_Bn[0]~input_o\,
-	datac => \ALT_INV_An[1]~input_o\,
-	datad => \ALT_INV_Bn[1]~input_o\,
+	dataa => \ALT_INV_Cin0~input_o\,
+	datab => \ALT_INV_An[0]~input_o\,
+	datac => \ALT_INV_Bn[0]~input_o\,
+	datad => \ALT_INV_An[1]~input_o\,
+	datae => \ALT_INV_Bn[1]~input_o\,
 	combout => \rca_addergen:1:rca_addergen|Sout~combout\);
+
+\rca_addergen:1:rca_addergen|Cout\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \rca_addergen:1:rca_addergen|Cout~combout\ = ( \Bn[1]~input_o\ & ( ((!\Cin0~input_o\ & (\An[0]~input_o\ & \Bn[0]~input_o\)) # (\Cin0~input_o\ & ((\Bn[0]~input_o\) # (\An[0]~input_o\)))) # (\An[1]~input_o\) ) ) # ( !\Bn[1]~input_o\ & ( (\An[1]~input_o\ & 
+-- ((!\Cin0~input_o\ & (\An[0]~input_o\ & \Bn[0]~input_o\)) # (\Cin0~input_o\ & ((\Bn[0]~input_o\) # (\An[0]~input_o\))))) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000000010111000101111111111100000000000101110001011111111111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \ALT_INV_Cin0~input_o\,
+	datab => \ALT_INV_An[0]~input_o\,
+	datac => \ALT_INV_Bn[0]~input_o\,
+	datad => \ALT_INV_An[1]~input_o\,
+	datae => \ALT_INV_Bn[1]~input_o\,
+	combout => \rca_addergen:1:rca_addergen|Cout~combout\);
 
 \An[2]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
@@ -242,42 +280,19 @@ PORT MAP (
 
 \rca_addergen:2:rca_addergen|Sout\ : cyclonev_lcell_comb
 -- Equation(s):
--- \rca_addergen:2:rca_addergen|Sout~combout\ = ( \An[2]~input_o\ & ( \Bn[2]~input_o\ & ( (!\An[1]~input_o\ & (\An[0]~input_o\ & (\Bn[0]~input_o\ & \Bn[1]~input_o\))) # (\An[1]~input_o\ & (((\An[0]~input_o\ & \Bn[0]~input_o\)) # (\Bn[1]~input_o\))) ) ) ) # ( 
--- !\An[2]~input_o\ & ( \Bn[2]~input_o\ & ( (!\An[1]~input_o\ & ((!\An[0]~input_o\) # ((!\Bn[0]~input_o\) # (!\Bn[1]~input_o\)))) # (\An[1]~input_o\ & (!\Bn[1]~input_o\ & ((!\An[0]~input_o\) # (!\Bn[0]~input_o\)))) ) ) ) # ( \An[2]~input_o\ & ( 
--- !\Bn[2]~input_o\ & ( (!\An[1]~input_o\ & ((!\An[0]~input_o\) # ((!\Bn[0]~input_o\) # (!\Bn[1]~input_o\)))) # (\An[1]~input_o\ & (!\Bn[1]~input_o\ & ((!\An[0]~input_o\) # (!\Bn[0]~input_o\)))) ) ) ) # ( !\An[2]~input_o\ & ( !\Bn[2]~input_o\ & ( 
--- (!\An[1]~input_o\ & (\An[0]~input_o\ & (\Bn[0]~input_o\ & \Bn[1]~input_o\))) # (\An[1]~input_o\ & (((\An[0]~input_o\ & \Bn[0]~input_o\)) # (\Bn[1]~input_o\))) ) ) )
+-- \rca_addergen:2:rca_addergen|Sout~combout\ = !\rca_addergen:1:rca_addergen|Cout~combout\ $ (!\An[2]~input_o\ $ (\Bn[2]~input_o\))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000000100011111111111101110000011111110111000000000000100011111",
+	lut_mask => "0110100101101001011010010110100101101001011010010110100101101001",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_An[0]~input_o\,
-	datab => \ALT_INV_Bn[0]~input_o\,
-	datac => \ALT_INV_An[1]~input_o\,
-	datad => \ALT_INV_Bn[1]~input_o\,
-	datae => \ALT_INV_An[2]~input_o\,
-	dataf => \ALT_INV_Bn[2]~input_o\,
+	dataa => \rca_addergen:1:rca_addergen|ALT_INV_Cout~combout\,
+	datab => \ALT_INV_An[2]~input_o\,
+	datac => \ALT_INV_Bn[2]~input_o\,
 	combout => \rca_addergen:2:rca_addergen|Sout~combout\);
-
-\rca_addergen:1:rca_addergen|Cout\ : cyclonev_lcell_comb
--- Equation(s):
--- \rca_addergen:1:rca_addergen|Cout~combout\ = (!\An[1]~input_o\ & (\An[0]~input_o\ & (\Bn[0]~input_o\ & \Bn[1]~input_o\))) # (\An[1]~input_o\ & (((\An[0]~input_o\ & \Bn[0]~input_o\)) # (\Bn[1]~input_o\)))
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000100011111000000010001111100000001000111110000000100011111",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ALT_INV_An[0]~input_o\,
-	datab => \ALT_INV_Bn[0]~input_o\,
-	datac => \ALT_INV_An[1]~input_o\,
-	datad => \ALT_INV_Bn[1]~input_o\,
-	combout => \rca_addergen:1:rca_addergen|Cout~combout\);
 
 \An[3]~input\ : cyclonev_io_ibuf
 -- pragma translate_off

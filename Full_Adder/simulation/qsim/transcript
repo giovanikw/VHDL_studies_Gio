@@ -2,7 +2,7 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
 # Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 18:33:29 on Jul 10,2026
+# Start time: 20:53:45 on Jul 10,2026
 # vcom -work work fulladder.vho 
 # ** Note: (vcom-220) '/home/gio/altera_lite/25.1std/questa_fse/linux_x86_64/../modelsim.ini' is used as the ini file.
 # -- Loading package STANDARD
@@ -15,23 +15,28 @@
 # -- Loading package cyclonev_components
 # -- Compiling entity rca_adder
 # -- Compiling architecture structure of rca_adder
-# End time: 18:33:29 on Jul 10,2026, Elapsed time: 0:00:00
+# End time: 20:53:45 on Jul 10,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 18:33:29 on Jul 10,2026
-# vcom -work work Waveform.vwf.vht 
+# Start time: 20:53:45 on Jul 10,2026
+# vcom -work work Waveform1.vwf.vht 
 # ** Note: (vcom-220) '/home/gio/altera_lite/25.1std/questa_fse/linux_x86_64/../modelsim.ini' is used as the ini file.
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
+# ** Warning: Waveform1.vwf.vht(32): (vcom-1615) Existing entity 'rca_adder_vhd_vec_tst' at /home/gio/VHDL_studies_Gio/Full_Adder/simulation/qsim/Waveform.vwf.vht(32) will be overwritten.
 # -- Compiling entity rca_adder_vhd_vec_tst
+# ** Warning: Waveform1.vwf.vht(34): (vcom-1615) Existing architecture 'rca_adder_vhd_vec_tst(rca_adder_arch)' at /home/gio/VHDL_studies_Gio/Full_Adder/simulation/qsim/Waveform.vwf.vht(34) will be overwritten.
 # -- Compiling architecture rca_adder_arch of rca_adder_vhd_vec_tst
-# End time: 18:33:29 on Jul 10,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
+# End time: 20:53:45 on Jul 10,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
 # ** Note: (vsim-220) '/home/gio/altera_lite/25.1std/questa_fse/linux_x86_64/../modelsim.ini' is used as the ini file.
-# vsim -voptargs=""+acc"" -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.fulladder_vhd_vec_tst 
-# Start time: 18:33:29 on Jul 10,2026
-# ** Note: (vsim-8009) Loading existing optimized design _opt
+# vsim -voptargs=""+acc"" -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.rca_adder_vhd_vec_tst 
+# Start time: 20:53:45 on Jul 10,2026
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vopt-220) '/home/gio/altera_lite/25.1std/questa_fse/linux_x86_64/../modelsim.ini' is used as the ini file.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # //  Questa Altera Starter FPGA Edition-64
 # //  Version 2025.2 linux_x86_64 May 31 2025
 # //
@@ -49,18 +54,19 @@
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading work.fulladder_vhd_vec_tst(fulladder_arch)#1
+# Loading work.rca_adder_vhd_vec_tst(rca_adder_arch)#1
 # Loading altera_lnsim.altera_lnsim_components
 # Loading ieee.vital_timing(body)
 # Loading ieee.vital_primitives(body)
 # Loading cyclonev.cyclonev_atom_pack(body)
 # Loading cyclonev.cyclonev_components
-# Loading work.fulladder(structure)#1
+# Loading work.rca_adder(structure)#1
 # Loading ieee.std_logic_arith(body)
 # Loading cyclonev.cyclonev_io_obuf(arch)#1
 # Loading cyclonev.cyclonev_io_ibuf(arch)#1
 # Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#1
 # Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#2
-# after#35
-# End time: 18:33:29 on Jul 10,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#3
+# after#37
+# End time: 20:53:46 on Jul 10,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
