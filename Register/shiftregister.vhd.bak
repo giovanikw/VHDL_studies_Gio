@@ -1,0 +1,20 @@
+--libs
+library ieee;
+use ieee.std_logic_1164.all;
+
+--define entity
+
+entity shiftreg is 
+port(
+		Datain, Clk, Rst : in std_logic;
+		Qn: out std_logic);
+
+end shiftreg;
+
+--define behaviour
+
+architecture shiftregarch of shiftreg is
+
+begin
+		
+end shiftregarch;

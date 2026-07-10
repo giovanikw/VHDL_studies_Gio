@@ -1,0 +1,29 @@
+--libs
+library ieee;
+use ieee.std_logic_1164.all;
+
+--define entity
+
+entity dlatchnew is 
+port(
+		D, Clk, Rst : in std_logic;
+		Q: out std_logic);
+
+end dlatchnewnew;
+
+--define behaviour
+
+architecture dlatchnewnewArch of dlatchnewnew is
+
+begin
+
+	dlatchnewnewClk : process(Clk, Rst)
+	begin
+		if Rst = '1' then
+			Q<= '0';
+		elsif rising_edge(Clk) then
+			Q <= D;
+		end if;
+end process;	
+		
+end dlatchnewArch;

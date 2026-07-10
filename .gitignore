@@ -1,0 +1,20 @@
+# Ignore Quartus database and output directories anywhere in the project
+db/
+incremental_db/
+output_files/
+greybox/
+
+# Ignore project map files and user-specific workspace settings
+*.qws
+*.wsf
+
+# Ignore compilation reports and logs
+*.rpt
+*.summary
+*.log
+*.chg
+*.htm
+
+# Keeping your specific extensions ignored
+*.qpf
+*.qsf
