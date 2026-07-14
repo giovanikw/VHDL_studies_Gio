@@ -48,6 +48,7 @@ R7
 R8
 n@_opt1
 R9
+R2
 Efulladder
 Z11 w1783712221
 Z12 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
@@ -141,7 +142,7 @@ R34
 R27
 R28
 Erca_adder
-Z35 w1783727624
+Z35 w1783961529
 R12
 R13
 R14
@@ -149,7 +150,7 @@ R15
 R16
 R17
 R18
-!i122 18
+!i122 20
 R2
 R19
 R20
@@ -159,9 +160,9 @@ V=nBSCghMkng906^JE@ehi1
 !s100 fVVeVf;<AK5=VD[:VfBOU1
 R22
 32
-R10
+Z36 !s110 1783961530
 !i10b 1
-Z36 !s108 1783727625.000000
+Z37 !s108 1783961530.000000
 R25
 R26
 !i113 0
@@ -176,59 +177,59 @@ R16
 R17
 R18
 DEx4 work 9 rca_adder 0 22 =nBSCghMkng906^JE@ehi1
-!i122 18
+!i122 20
 l89
 L46 298
 VjRK0D97cdZ@4R<Hoaz;643
 !s100 R2YBmcWYdHnUD4RIMV0LA1
 R22
 32
-R10
-!i10b 1
 R36
+!i10b 1
+R37
 R25
 R26
 !i113 0
 R27
 R28
 Erca_adder_vhd_vec_tst
-Z37 w1783727622
+Z38 w1783961528
 R16
 R17
-!i122 19
+!i122 21
 R2
-Z38 8Waveform1.vwf.vht
-Z39 FWaveform1.vwf.vht
+Z39 8Waveform1.vwf.vht
+Z40 FWaveform1.vwf.vht
 l0
 R32
 VLfP=kkjIMgAFoe5I1Q3oZ0
 !s100 K:bnVaMRWJ8<c=D5nn^k:1
 R22
 32
-R10
-!i10b 1
 R36
-Z40 !s90 -work|work|Waveform1.vwf.vht|
-Z41 !s107 Waveform1.vwf.vht|
+!i10b 1
+R37
+Z41 !s90 -work|work|Waveform1.vwf.vht|
+Z42 !s107 Waveform1.vwf.vht|
 !i113 0
 R27
 R28
 Arca_adder_arch
 R16
 R17
-DEx4 work 21 rca_adder_vhd_vec_tst 0 22 LfP=kkjIMgAFoe5I1Q3oZ0
-!i122 19
+Z43 DEx4 work 21 rca_adder_vhd_vec_tst 0 22 LfP=kkjIMgAFoe5I1Q3oZ0
+!i122 21
 l49
-L34 476
-V`Uc7B@NJ1jmmA9R]o1J>D2
-!s100 nKF:A9MWRAa705ndPFBKK2
+Z44 L34 476
+Z45 V`Uc7B@NJ1jmmA9R]o1J>D2
+Z46 !s100 nKF:A9MWRAa705ndPFBKK2
 R22
 32
-R10
-!i10b 1
 R36
-R40
+!i10b 1
+R37
 R41
+R42
 !i113 0
 R27
 R28

@@ -5,7 +5,7 @@ use ieee.std_logic_1164.all;
 
 --define entity
 
-entity rca_adder is
+entity rca_adder_test is
 
 generic (numofbits : integer := 4);
 
