@@ -13,7 +13,7 @@ entity shiftregister is
 	port
 	(
 		Datain, CLK, RST : in std_logic;
-		Qout : out std_logic
+		Qout : out std_logic_vector(bitsinreg-1 downto 0)
 	);
 
 end shiftregister;
@@ -50,6 +50,6 @@ begin
 	end generate latchgen;
 	
 	Carry(0) <= Datain;
-	Qout <= Carry(bitsinreg);
+	Qout <= Carry(bitsinreg downto 1);
 
 end shiftregarch;
