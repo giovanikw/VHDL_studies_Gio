@@ -35,12 +35,14 @@ end component;
 component shiftregister is
 	port
 	(
-		Datain, Clk, Rst : in std_logic
+		Datain, CLK, RST : in std_logic;
+		Qout : out std_logic_vector(numofbits-1 downto 0)
 	);
 end component;
 	
 --signals
 signal Din : std_logic;
+
 
 begin
 	
