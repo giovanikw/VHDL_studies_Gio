@@ -4,20 +4,20 @@ use ieee.std_logic_1164.all;
 
 --define entity
 
-entity flipflop is 
+entity dlatchnew is 
 port(
 		D, Clk, Rst : in std_logic;
 		Q: out std_logic);
 
-end flipflop;
+end dlatchnew;
 
 --define behaviour
 
-architecture flipflopArch of flipflop is
+architecture dlatchnewArch of dlatchnew is
 
 begin
 
-	flipflopnewClk : process(Clk, Rst)
+	dlatchnewnewClk : process(Clk, Rst)
 	begin
 		if Rst = '1' then
 			Q<= '0';
@@ -26,4 +26,4 @@ begin
 		end if;
 end process;	
 		
-end flipflopArch;
+end dlatchnewArch;
