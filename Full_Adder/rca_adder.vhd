@@ -14,7 +14,7 @@ port
 	An, Bn : in std_logic_vector(numofbits-1 downto 0);
 	Sn : out std_logic_vector(numofbits-1 downto 0);
 	Cin0, clk, rst : in std_logic;
-	Cout, Sout : out std_logic
+	Cout : out std_logic
 );
 
 end rca_adder;
@@ -95,7 +95,7 @@ begin
 	Dl(1) <= Bn(0);
 	Dl(2) <= Cin0;
 
-	Sout <= Ql(numofbits-1);
+	Sn(numofbits-1) <= Ql(numofbits-1);
 	Cout <= Ql(numofbits);
 
 end behaviour;
