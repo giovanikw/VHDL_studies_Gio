@@ -58,7 +58,7 @@ begin
 			);
 	end generate rca_dlatchgen;
 
-	rca_addergen : for i in 0 to numofbits-3 generate
+	rca_addergen : for i in 1 to numofbits-2 generate
 			rca_addergen : entity work.fulladder
 				port map
 				(
@@ -75,9 +75,9 @@ begin
 		(
 			A => Ql(0),
 			B => Ql(1),
-			Sout => Sn(3),
+			Sout => Sn(0),
 			Cin => Ql(2),
-			Cout => Cn(0)
+			Cout => Cn(1)
 		);
 
 	rca_last_adder : entity work.fulladder
@@ -85,14 +85,14 @@ begin
 		(
 			A => An(numofbits-1),
 			B => Bn(numofbits-1),
-			Sout => Dl(3),
-			Cin => Cn(numofbits-2),
+			Sout => Dl(numofbits-1),
+			Cin => Cn(numofbits-1),
 			Cout => Dl(4)
 		);
 
 
-	Dl(0) <= An(numofbits-2);
-	Dl(1) <= Bn(numofbits-2);
+	Dl(0) <= An(0);
+	Dl(1) <= Bn(0);
 	Dl(2) <= Cin0;
 
 	Sout <= Ql(numofbits-1);
