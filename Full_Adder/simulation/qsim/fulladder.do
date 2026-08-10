@@ -1,7 +1,7 @@
 onerror {exit -code 1}
 vlib work
 vcom -work work fulladder.vho
-vcom -work work Waveform1.vwf.vht
+vcom -work work RCAwithffs_Waverform.vwf.vht
 vsim -voptargs="+acc" -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.rca_adder_vhd_vec_tst
 vcd file -direction fulladder.msim.vcd
 vcd add -internal rca_adder_vhd_vec_tst/*
@@ -15,5 +15,3 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
-

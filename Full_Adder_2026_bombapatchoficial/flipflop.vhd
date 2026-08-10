@@ -4,26 +4,26 @@ use ieee.std_logic_1164.all;
 
 --define entity
 
-entity dlatchnew is 
+entity flipflop is 
 port(
 		D, Clk, Rst : in std_logic;
 		Q: out std_logic);
 
-end dlatchnew;
+end flipflop;
 
 --define behaviour
 
-architecture dlatchnewArch of dlatchnew is
+architecture flipflopArch of flipflop is
 
 begin
 
-	dlatchnewnewClk : process(Clk, Rst)
+	flipflopnewClk : process(Clk, Rst)
 	begin
 		if Rst = '1' then
 			Q<= '0';
-		elsif Clk = '1' then
+		elsif rising_edge(Clk) then
 			Q <= D;
 		end if;
 end process;	
 		
-end dlatchnewArch;
+end flipflopArch;

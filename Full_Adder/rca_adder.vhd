@@ -13,8 +13,8 @@ port
 (
 	An, Bn : in std_logic_vector(numofbits-1 downto 0);
 	Sn : out std_logic_vector(numofbits-1 downto 0);
-	Cin0 : in std_logic;
-	Soutn : out std_logic
+	Cin0, clk, rst : in std_logic;
+	Cout, Sout : out std_logic
 );
 
 end rca_adder;
@@ -33,13 +33,32 @@ component fulladder is
 	);
 end component;
 
---signals
-signal Cn : std_logic_vector(numofbits downto 0);
+component dlatchnew is
+	port
+	(
+		D, Clk, Rst : in std_logic;
+		Q: out std_logic
+	);
+end component;
 
+--signals
+signal Cn : std_logic_vector(numofbits+1 downto 0);
+signal Dl, Ql : std_logic_vector(4 downto 0);
 
 begin
+	
+	rca_dlatchgen : for i in 0 to 4 generate
+		rca_dlatchgen : entity work.dlatchnew
+			port map
+			(
+				D => Dl(i),
+				Q => Ql(i),
+				Clk => clk,
+				Rst	=> rst
+			);
+	end generate rca_dlatchgen;
 
-	rca_addergen : for i in 0 to numofbits-1 generate
+	rca_addergen : for i in 0 to numofbits-3 generate
 			rca_addergen : entity work.fulladder
 				port map
 				(
@@ -50,7 +69,33 @@ begin
 					Cout => Cn(i+1)
 				);
 	end generate rca_addergen;
-	Cn(0) <= Cin0;
-	Soutn <= Cn(4);
+
+	rca_first_adder : entity work.fulladder
+		port map
+		(
+			A => Ql(0),
+			B => Ql(1),
+			Sout => Sn(3),
+			Cin => Ql(2),
+			Cout => Cn(0)
+		);
+
+	rca_last_adder : entity work.fulladder
+		port map
+		(
+			A => An(numofbits-1),
+			B => Bn(numofbits-1),
+			Sout => Dl(3),
+			Cin => Cn(numofbits-2),
+			Cout => Dl(4)
+		);
+
+
+	Dl(0) <= An(numofbits-2);
+	Dl(1) <= Bn(numofbits-2);
+	Dl(2) <= Cin0;
+
+	Sout <= Ql(numofbits-1);
+	Cout <= Ql(numofbits);
 
 end behaviour;
