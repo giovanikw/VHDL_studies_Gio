@@ -7,8 +7,8 @@ use ieee.std_logic_1164.all;
 entity dlatchnew is 
 port(
 		D, Clk, Rst : in std_logic;
-		Q: out std_logic
-	);
+		Q: out std_logic);
+
 end dlatchnew;
 
 --define behaviour
