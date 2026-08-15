@@ -15,7 +15,7 @@ end dlatchnew;
 
 architecture dlatchnewArch of dlatchnew is
 
-begin
+begin	
 
 	dlatchnewnewClk : process(Clk, Rst)
 	begin

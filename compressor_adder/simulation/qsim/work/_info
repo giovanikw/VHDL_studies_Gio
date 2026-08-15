@@ -1,0 +1,123 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+!s11e vcom 2025.2 2025.05, May 31 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 d/home/gio/VHDL_studies_Gio/compressor_adder/simulation/qsim
+T_opt
+!i145 1
+!i144 0
+!s110 1786812424
+V0mWR[M46N8YnjA0dXjVJT3
+04 20 13 work toplevel_vhd_vec_tst toplevel_arch 1
+=1-0045e2bfd01b-6a809808-9909-3e35
+R1
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U2 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim +acc
+tCvgOpt 0
+n@_opt
+OL;O;2025.2;82
+Etoplevel
+Z3 w1786812422
+Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z5 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 Fl:z4XT4QeMENabFAZLcN1
+Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z9 DPx10 cycloneive 21 cycloneive_components 0 22 G7f=dFn9TOAba<6b7AgXm2
+!i122 4
+R2
+Z10 8compressor_adder.vho
+Z11 Fcompressor_adder.vho
+l0
+L35 1
+V1<>W^bU[]ViZO`77HRQS33
+!s100 KONEgQgdfc8GDdaO_KBIn3
+Z12 OL;C;2025.2;82
+32
+Z13 !s110 1786812423
+!i10b 1
+Z14 !s108 1786812423.000000
+Z15 !s90 -work|work|compressor_adder.vho|
+Z16 !s107 compressor_adder.vho|
+!i113 0
+Z17 o-work work
+Z18 tExplicit 1 CvgOpt 0
+Astructure
+R4
+R5
+R6
+R7
+R8
+R9
+DEx4 work 8 toplevel 0 22 1<>W^bU[]ViZO`77HRQS33
+!i122 4
+l68
+L45 120
+VY=LQz8fWjWGl<J=Y`65Eb0
+!s100 ^^m;LACNSeAm57C;WbkC>1
+R12
+32
+R13
+!i10b 1
+R14
+R15
+R16
+!i113 0
+R17
+R18
+Etoplevel_vhd_vec_tst
+Z19 w1786812421
+R7
+R8
+!i122 5
+R2
+Z20 8compressor.vwf.vht
+Z21 Fcompressor.vwf.vht
+l0
+L32 1
+VZhGk;Of=R9Yb<1fPEhI7?0
+!s100 oKeX4McJeKg;Ri`6^F5mB1
+R12
+32
+R13
+!i10b 1
+R14
+Z22 !s90 -work|work|compressor.vwf.vht|
+Z23 !s107 compressor.vwf.vht|
+!i113 0
+R17
+R18
+Atoplevel_arch
+R7
+R8
+DEx4 work 20 toplevel_vhd_vec_tst 0 22 ZhGk;Of=R9Yb<1fPEhI7?0
+!i122 5
+l51
+L34 66
+VF@N25CMglbFYD:GnF61HI0
+!s100 6d@aXBf8JECnn?:CYDdRc3
+R12
+32
+R13
+!i10b 1
+R14
+R22
+R23
+!i113 0
+R17
+R18

@@ -3,7 +3,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 --define entity
-entity pipo_register is
+entity pipo_register is generic(numofbits integer := 4);
 	port
 	(
 		D : in std_logic_vector(4 downto 0);
