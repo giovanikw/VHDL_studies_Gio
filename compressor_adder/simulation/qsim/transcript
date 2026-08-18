@@ -2,7 +2,7 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
 # Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 13:47:03 on Aug 15,2026
+# Start time: 10:14:56 on Aug 18,2026
 # vcom -work work compressor_adder.vho 
 # ** Note: (vcom-220) '/home/gio/altera_lite/25.1std/questa_fse/linux_x86_64/../modelsim.ini' is used as the ini file.
 # -- Loading package STANDARD
@@ -14,26 +14,23 @@
 # -- Loading package cycloneive_components
 # -- Compiling entity toplevel
 # -- Compiling architecture structure of toplevel
-# End time: 13:47:03 on Aug 15,2026, Elapsed time: 0:00:00
+# End time: 10:14:56 on Aug 18,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 13:47:03 on Aug 15,2026
-# vcom -work work compressor.vwf.vht 
+# Start time: 10:14:56 on Aug 18,2026
+# vcom -work work compressor_4x2.vwf.vht 
 # ** Note: (vcom-220) '/home/gio/altera_lite/25.1std/questa_fse/linux_x86_64/../modelsim.ini' is used as the ini file.
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity toplevel_vhd_vec_tst
 # -- Compiling architecture toplevel_arch of toplevel_vhd_vec_tst
-# End time: 13:47:03 on Aug 15,2026, Elapsed time: 0:00:00
+# End time: 10:14:56 on Aug 18,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # ** Note: (vsim-220) '/home/gio/altera_lite/25.1std/questa_fse/linux_x86_64/../modelsim.ini' is used as the ini file.
 # vsim -voptargs=""+acc"" -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.toplevel_vhd_vec_tst 
-# Start time: 13:47:03 on Aug 15,2026
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
-# ** Note: (vopt-220) '/home/gio/altera_lite/25.1std/questa_fse/linux_x86_64/../modelsim.ini' is used as the ini file.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Start time: 10:14:56 on Aug 18,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
 # //  Questa Altera Starter FPGA Edition-64
 # //  Version 2025.2 linux_x86_64 May 31 2025
 # //
@@ -62,6 +59,8 @@
 # Loading cycloneive.cycloneive_io_ibuf(arch)#1
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#1
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#2
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#3
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#4
 # after#34
-# End time: 13:47:04 on Aug 15,2026, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 1
+# End time: 10:14:57 on Aug 18,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

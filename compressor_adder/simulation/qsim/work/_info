@@ -7,6 +7,8 @@ R0
 R1
 R0
 R1
+R0
+R1
 !s11e vcom 2025.2 2025.05, May 31 2025
 13
 !s112 1.1
@@ -18,10 +20,10 @@ Z2 d/home/gio/VHDL_studies_Gio/compressor_adder/simulation/qsim
 T_opt
 !i145 1
 !i144 0
-!s110 1786812424
-V0mWR[M46N8YnjA0dXjVJT3
+Z3 !s110 1787058710
+VYI57JmgX?dMjWg6H3dGL_2
 04 20 13 work toplevel_vhd_vec_tst toplevel_arch 1
-=1-0045e2bfd01b-6a809808-9909-3e35
+=1-0045e2bfd01b-6a845a16-48bca-5ce4
 R1
 !s12f OEM100
 !s12b OEM100
@@ -31,93 +33,94 @@ o-quiet -auto_acc_if_foreign -work work -L cycloneive -L altera -L altera_mf -L 
 tCvgOpt 0
 n@_opt
 OL;O;2025.2;82
-Etoplevel
-Z3 w1786812422
-Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
-Z5 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 Fl:z4XT4QeMENabFAZLcN1
-Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
-Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-Z9 DPx10 cycloneive 21 cycloneive_components 0 22 G7f=dFn9TOAba<6b7AgXm2
-!i122 4
 R2
-Z10 8compressor_adder.vho
-Z11 Fcompressor_adder.vho
+Etoplevel
+Z4 w1787058896
+Z5 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z6 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 Fl:z4XT4QeMENabFAZLcN1
+Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z9 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z10 DPx10 cycloneive 21 cycloneive_components 0 22 G7f=dFn9TOAba<6b7AgXm2
+!i122 8
+R2
+Z11 8compressor_adder.vho
+Z12 Fcompressor_adder.vho
 l0
 L35 1
-V1<>W^bU[]ViZO`77HRQS33
-!s100 KONEgQgdfc8GDdaO_KBIn3
-Z12 OL;C;2025.2;82
+VejTFHmDBN]?PiRMHDCGEA2
+!s100 mG[2z6G;6QDQJiKm]A@Gg0
+Z13 OL;C;2025.2;82
 32
-Z13 !s110 1786812423
+Z14 !s110 1787058896
 !i10b 1
-Z14 !s108 1786812423.000000
-Z15 !s90 -work|work|compressor_adder.vho|
-Z16 !s107 compressor_adder.vho|
+Z15 !s108 1787058896.000000
+Z16 !s90 -work|work|compressor_adder.vho|
+Z17 !s107 compressor_adder.vho|
 !i113 0
-Z17 o-work work
-Z18 tExplicit 1 CvgOpt 0
+Z18 o-work work
+Z19 tExplicit 1 CvgOpt 0
 Astructure
-R4
 R5
 R6
 R7
 R8
 R9
-DEx4 work 8 toplevel 0 22 1<>W^bU[]ViZO`77HRQS33
-!i122 4
-l68
-L45 120
-VY=LQz8fWjWGl<J=Y`65Eb0
-!s100 ^^m;LACNSeAm57C;WbkC>1
-R12
-32
+R10
+DEx4 work 8 toplevel 0 22 ejTFHmDBN]?PiRMHDCGEA2
+!i122 8
+l79
+L48 195
+V>Wk=e74<nz@QVGE4?8WcA2
+!s100 dh^_CkKlb<UTLn78=UQnK2
 R13
-!i10b 1
+32
 R14
+!i10b 1
 R15
 R16
-!i113 0
 R17
+!i113 0
 R18
+R19
 Etoplevel_vhd_vec_tst
-Z19 w1786812421
-R7
+Z20 w1787058894
 R8
-!i122 5
+R9
+!i122 9
 R2
-Z20 8compressor.vwf.vht
-Z21 Fcompressor.vwf.vht
+Z21 8compressor_4x2.vwf.vht
+Z22 Fcompressor_4x2.vwf.vht
 l0
 L32 1
 VZhGk;Of=R9Yb<1fPEhI7?0
 !s100 oKeX4McJeKg;Ri`6^F5mB1
-R12
-32
 R13
-!i10b 1
+32
 R14
-Z22 !s90 -work|work|compressor.vwf.vht|
-Z23 !s107 compressor.vwf.vht|
+!i10b 1
+R15
+Z23 !s90 -work|work|compressor_4x2.vwf.vht|
+Z24 !s107 compressor_4x2.vwf.vht|
 !i113 0
-R17
 R18
+R19
 Atoplevel_arch
-R7
 R8
-DEx4 work 20 toplevel_vhd_vec_tst 0 22 ZhGk;Of=R9Yb<1fPEhI7?0
-!i122 5
-l51
-L34 66
-VF@N25CMglbFYD:GnF61HI0
-!s100 6d@aXBf8JECnn?:CYDdRc3
-R12
-32
+R9
+Z25 DEx4 work 20 toplevel_vhd_vec_tst 0 22 ZhGk;Of=R9Yb<1fPEhI7?0
+!i122 9
+l57
+Z26 L34 103
+Z27 V`W1aiUzbEiCo>BK__QdR=3
+Z28 !s100 5=:HE]HQI5fPOg_?i<f^E0
 R13
-!i10b 1
+32
 R14
-R22
+!i10b 1
+R15
 R23
+R24
 !i113 0
-R17
 R18
+R19

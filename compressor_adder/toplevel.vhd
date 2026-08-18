@@ -5,9 +5,14 @@ use ieee.std_logic_1164.all;
 --define entity
 entity toplevel is 
 port(
+		--in
 		A : in std_logic;
 		B : in std_logic;
 		C : in std_logic;
+		D : in std_logic;
+		Cin : in std_logic;
+		--out
+		Cout : out std_logic;
 		Carry : out std_logic;
 		Sum : out std_logic
 	);
@@ -16,19 +21,29 @@ end toplevel;
 
 --define behaviour
 	architecture behaviour of toplevel is
-	
 	signal Xor1: std_logic;
 	signal Xor2 : std_logic;
-
+	signal Xor3 : std_logic;
+	signal Xor4 : std_logic;
 	begin
 		Xor1 <= A xor B;
-		Xor2 <= Xor1 xor C;
-		compressor : entity work.mux
+		Xor2 <= C xor D;
+		Xor3 <= Xor1 xor Xor2;
+		Xor4 <= Cin xor Xor3;
+		
+		mux1 : entity work.mux
 			port map(
 				A => A,
 				B => C,
 				Sel => Xor1,
+				Q => Cout
+			);
+		mux2 : entity work.mux
+			port map(
+				A => D,
+				B => Cin,
+				Sel => Xor3,
 				Q => Carry
 			);
-		Sum <= Xor2;
+		Sum <= Xor4;
 end behaviour;
