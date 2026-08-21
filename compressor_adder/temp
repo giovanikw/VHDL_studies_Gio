@@ -1,0 +1,14 @@
+signal Cinfa : std_logic_vector(bits+1 downto 0);
+signal Sn : std_logic_vector(bits downto 0);
+
+	recombination : for i in 0 to bits generate
+		recombination : entity work.fulladder
+			port map(
+			A => Sum(i),
+			B => Carry(i),
+			Sout => Sn(i),
+			Cin => Cinfa(i),
+			Cout => Cinfa(i+1)
+			);
+	end generate recombination;
+	S <= Sn;

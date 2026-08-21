@@ -1,8 +1,6 @@
---libs
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
---define entity
 entity toplevel is generic(bits: integer := 3);
 port(
 		--inputs
@@ -38,41 +36,48 @@ begin
 			Sum => Sum,
 			Cout => Cout
 		);
-		
-		Sumout(0) <= Sum(0);
-		Sumout(5) <= Carryrecomb(3);
-		
+	--first and last sums
+	Sumout(0) <= Sum(0);
+	Sumout(5) <= Carryrecomb(3);	
 	--half adder
 	recomb0 : entity work.half_adder
 	port map(
+		--inputs
 		A => Carrycomp(0),
 		B => Sum(1),
+		--outputs
 		Sout => Sumout(1),
 		Cout => Carryrecomb(0)
 	);
 	--fulladders	
 	recomb1 : entity work.fulladder
 		port map(
+		--inputs
 		A => Carrycomp(1),
 		B => Sum(2),
-		Sout => Sumout(2),
 		Cin => Carryrecomb(0),
+		--outputs
+		Sout => Sumout(2),
 		Cout => Carryrecomb(1)
 		);
 	recomb2 : entity work.fulladder
 		port map(
+		--inputs
 		A => Carrycomp(2),
 		B => Sum(3),
-		Sout => Sumout(3),
 		Cin => Carryrecomb(1),
+		--outputs
+		Sout => Sumout(3),
 		Cout => Carryrecomb(2)
 		);
 	recomb3 : entity work.fulladder
 		port map(
+		--inputs
 		A => Carrycomp(3),
 		B => Cout,
-		Sout => Sumout(4),
 		Cin => Carryrecomb(2),
+		--outputs
+		Sout => Sumout(4),
 		Cout => Carryrecomb(3)
 		);
 end behaviour;
