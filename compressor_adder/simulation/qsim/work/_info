@@ -13,6 +13,18 @@ R0
 R1
 R0
 R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
 !s11e vcom 2025.2 2025.05, May 31 2025
 13
 !s112 1.1
@@ -24,10 +36,10 @@ Z2 d/home/gio/VHDL_studies_Gio/compressor_adder/simulation/qsim
 T_opt
 !i145 1
 !i144 0
-!s110 1787165517
-VQi8O3OO>0DAz1JF>i[3:70
+!s110 1787320858
+VN=C`WceGG0C<;_HVMzF@P3
 04 20 13 work toplevel_vhd_vec_tst toplevel_arch 1
-=1-0045e2bfd01b-6a85fb4c-cc39b-3f78
+=1-0045e2bfd01b-6a885a19-e87e6-6221
 R1
 !s12f OEM100
 !s12b OEM100
@@ -37,7 +49,6 @@ o-quiet -auto_acc_if_foreign -work work -L cycloneive -L altera -L altera_mf -L 
 tCvgOpt 0
 n@_opt
 OL;O;2025.2;82
-R2
 Ehard_block
 Z3 w1787158767
 Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
@@ -88,26 +99,26 @@ R17
 R18
 R19
 Etoplevel
-Z20 w1787165686
+Z20 w1787320856
 R4
 R5
 R6
 R7
 R8
 R9
-!i122 18
+!i122 30
 R2
 R10
 R11
 l0
 R12
-Vh>cf;dbTfn<Nk7OY?UKG[0
-!s100 W?gd6ML:TJfUba4CZ3hWN0
+V8N`dE;C_N;VdVKDmL@gd:0
+!s100 Z@3LIXae9W:06`U5c2gGo3
 R13
 32
-Z21 !s110 1787165687
+Z21 !s110 1787320857
 !i10b 1
-Z22 !s108 1787165687.000000
+Z22 !s108 1787320857.000000
 R16
 R17
 !i113 0
@@ -120,12 +131,12 @@ R6
 R7
 R8
 R9
-DEx4 work 8 toplevel 0 22 h>cf;dbTfn<Nk7OY?UKG[0
-!i122 18
-l109
-L48 609
-Vz]JL7:IOjGNm=dfKd3C2c3
-!s100 1TK1^eJAehHbZd9;@5nSN3
+DEx4 work 8 toplevel 0 22 8N`dE;C_N;VdVKDmL@gd:0
+!i122 30
+l107
+L46 649
+VMZ9@:UX>WIBf_0JIcOZec0
+!s100 ?6ce7^RAGeIfTFZlC2RNg0
 R13
 32
 R21
@@ -137,13 +148,13 @@ R17
 R18
 R19
 Etoplevel_vhd_vec_tst
-Z23 w1787165684
+Z23 w1787320854
 R7
 R8
-!i122 19
+!i122 31
 R2
-Z24 84compressorsadd.vwf.vht
-Z25 F4compressorsadd.vwf.vht
+Z24 8comprecomb.vwf.vht
+Z25 Fcomprecomb.vwf.vht
 l0
 L32 1
 VZhGk;Of=R9Yb<1fPEhI7?0
@@ -153,20 +164,20 @@ R13
 R21
 !i10b 1
 R22
-Z26 !s90 -work|work|4compressorsadd.vwf.vht|
-Z27 !s107 4compressorsadd.vwf.vht|
+Z26 !s90 -work|work|comprecomb.vwf.vht|
+Z27 !s107 comprecomb.vwf.vht|
 !i113 0
 R18
 R19
 Atoplevel_arch
 R7
 R8
-Z28 DEx4 work 20 toplevel_vhd_vec_tst 0 22 ZhGk;Of=R9Yb<1fPEhI7?0
-!i122 19
-l57
-Z29 L34 246
-Z30 VDDgOhbXgBRY^^?iJLKdX53
-Z31 !s100 O1GYXgNLC:Td3<kQC>aC[2
+DEx4 work 20 toplevel_vhd_vec_tst 0 22 ZhGk;Of=R9Yb<1fPEhI7?0
+!i122 31
+l53
+L34 240
+Vomf4;256OOUUPlfAKQN6M3
+!s100 4i=f9hScZ]X<[In7AzTPD0
 R13
 32
 R21

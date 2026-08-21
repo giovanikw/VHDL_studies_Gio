@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition"
 
--- DATE "08/19/2026 15:54:46"
+-- DATE "08/21/2026 11:00:56"
 
 -- 
 -- Device: Altera EP4CE6E22C6 Package TQFP144
@@ -39,9 +39,7 @@ ENTITY 	toplevel IS
 	Cn : IN std_logic_vector(3 DOWNTO 0);
 	Dn : IN std_logic_vector(3 DOWNTO 0);
 	Cin0 : IN std_logic;
-	Carry : OUT std_logic_vector(3 DOWNTO 0);
-	Sum : OUT std_logic_vector(3 DOWNTO 0);
-	Cout : OUT std_logic
+	Sumout : OUT std_logic_vector(5 DOWNTO 0)
 	);
 END toplevel;
 
@@ -60,51 +58,51 @@ SIGNAL ww_Bn : std_logic_vector(3 DOWNTO 0);
 SIGNAL ww_Cn : std_logic_vector(3 DOWNTO 0);
 SIGNAL ww_Dn : std_logic_vector(3 DOWNTO 0);
 SIGNAL ww_Cin0 : std_logic;
-SIGNAL ww_Carry : std_logic_vector(3 DOWNTO 0);
-SIGNAL ww_Sum : std_logic_vector(3 DOWNTO 0);
-SIGNAL ww_Cout : std_logic;
-SIGNAL \Carry[0]~output_o\ : std_logic;
-SIGNAL \Carry[1]~output_o\ : std_logic;
-SIGNAL \Carry[2]~output_o\ : std_logic;
-SIGNAL \Carry[3]~output_o\ : std_logic;
-SIGNAL \Sum[0]~output_o\ : std_logic;
-SIGNAL \Sum[1]~output_o\ : std_logic;
-SIGNAL \Sum[2]~output_o\ : std_logic;
-SIGNAL \Sum[3]~output_o\ : std_logic;
-SIGNAL \Cout~output_o\ : std_logic;
+SIGNAL ww_Sumout : std_logic_vector(5 DOWNTO 0);
+SIGNAL \Sumout[0]~output_o\ : std_logic;
+SIGNAL \Sumout[1]~output_o\ : std_logic;
+SIGNAL \Sumout[2]~output_o\ : std_logic;
+SIGNAL \Sumout[3]~output_o\ : std_logic;
+SIGNAL \Sumout[4]~output_o\ : std_logic;
+SIGNAL \Sumout[5]~output_o\ : std_logic;
 SIGNAL \Cin0~input_o\ : std_logic;
-SIGNAL \Dn[0]~input_o\ : std_logic;
 SIGNAL \An[0]~input_o\ : std_logic;
 SIGNAL \Bn[0]~input_o\ : std_logic;
-SIGNAL \comp:0:comp|Xor1~combout\ : std_logic;
 SIGNAL \Cn[0]~input_o\ : std_logic;
-SIGNAL \comp:0:comp|mux2|Q~0_combout\ : std_logic;
-SIGNAL \comp:0:comp|mux1|Q~0_combout\ : std_logic;
-SIGNAL \Dn[1]~input_o\ : std_logic;
+SIGNAL \Dn[0]~input_o\ : std_logic;
+SIGNAL \compressors|comp:0:comp|Xor3~0_combout\ : std_logic;
+SIGNAL \compressors|comp:0:comp|Sum~combout\ : std_logic;
 SIGNAL \An[1]~input_o\ : std_logic;
 SIGNAL \Bn[1]~input_o\ : std_logic;
 SIGNAL \Cn[1]~input_o\ : std_logic;
-SIGNAL \comp:1:comp|Xor3~0_combout\ : std_logic;
-SIGNAL \comp:1:comp|mux2|Q~0_combout\ : std_logic;
-SIGNAL \comp:1:comp|mux1|Q~0_combout\ : std_logic;
-SIGNAL \Dn[2]~input_o\ : std_logic;
+SIGNAL \Dn[1]~input_o\ : std_logic;
+SIGNAL \compressors|comp:1:comp|Xor3~0_combout\ : std_logic;
+SIGNAL \compressors|comp:1:comp|Sum~combout\ : std_logic;
+SIGNAL \recomb0|Sout~combout\ : std_logic;
+SIGNAL \recomb0|Cout~combout\ : std_logic;
+SIGNAL \compressors|comp:1:comp|mux1|Q~0_combout\ : std_logic;
+SIGNAL \compressors|comp:0:comp|mux1|Q~0_combout\ : std_logic;
+SIGNAL \compressors|comp:1:comp|mux2|Q~0_combout\ : std_logic;
 SIGNAL \An[2]~input_o\ : std_logic;
 SIGNAL \Bn[2]~input_o\ : std_logic;
 SIGNAL \Cn[2]~input_o\ : std_logic;
-SIGNAL \comp:2:comp|Xor3~0_combout\ : std_logic;
-SIGNAL \comp:2:comp|mux2|Q~0_combout\ : std_logic;
-SIGNAL \comp:2:comp|mux1|Q~0_combout\ : std_logic;
-SIGNAL \Dn[3]~input_o\ : std_logic;
+SIGNAL \Dn[2]~input_o\ : std_logic;
+SIGNAL \compressors|comp:2:comp|Xor3~0_combout\ : std_logic;
+SIGNAL \recomb1|Sout~0_combout\ : std_logic;
+SIGNAL \recomb1|Cout~0_combout\ : std_logic;
+SIGNAL \compressors|comp:2:comp|mux1|Q~0_combout\ : std_logic;
+SIGNAL \compressors|comp:2:comp|mux2|Q~0_combout\ : std_logic;
 SIGNAL \An[3]~input_o\ : std_logic;
 SIGNAL \Bn[3]~input_o\ : std_logic;
 SIGNAL \Cn[3]~input_o\ : std_logic;
-SIGNAL \comp:3:comp|Xor3~0_combout\ : std_logic;
-SIGNAL \comp:3:comp|mux2|Q~0_combout\ : std_logic;
-SIGNAL \comp:0:comp|Sum~combout\ : std_logic;
-SIGNAL \comp:1:comp|Sum~combout\ : std_logic;
-SIGNAL \comp:2:comp|Sum~combout\ : std_logic;
-SIGNAL \comp:3:comp|Sum~combout\ : std_logic;
-SIGNAL \comp:3:comp|mux1|Q~0_combout\ : std_logic;
+SIGNAL \Dn[3]~input_o\ : std_logic;
+SIGNAL \compressors|comp:3:comp|Xor3~0_combout\ : std_logic;
+SIGNAL \recomb2|Sout~combout\ : std_logic;
+SIGNAL \compressors|comp:3:comp|mux2|Q~0_combout\ : std_logic;
+SIGNAL \recomb2|Cout~0_combout\ : std_logic;
+SIGNAL \compressors|comp:3:comp|mux1|Q~0_combout\ : std_logic;
+SIGNAL \recomb3|Sout~combout\ : std_logic;
+SIGNAL \recomb3|Cout~0_combout\ : std_logic;
 
 BEGIN
 
@@ -113,111 +111,76 @@ ww_Bn <= Bn;
 ww_Cn <= Cn;
 ww_Dn <= Dn;
 ww_Cin0 <= Cin0;
-Carry <= ww_Carry;
-Sum <= ww_Sum;
-Cout <= ww_Cout;
+Sumout <= ww_Sumout;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
 
-\Carry[0]~output\ : cycloneive_io_obuf
+\Sumout[0]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \comp:0:comp|mux2|Q~0_combout\,
+	i => \compressors|comp:0:comp|Sum~combout\,
 	devoe => ww_devoe,
-	o => \Carry[0]~output_o\);
+	o => \Sumout[0]~output_o\);
 
-\Carry[1]~output\ : cycloneive_io_obuf
+\Sumout[1]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \comp:1:comp|mux2|Q~0_combout\,
+	i => \recomb0|Sout~combout\,
 	devoe => ww_devoe,
-	o => \Carry[1]~output_o\);
+	o => \Sumout[1]~output_o\);
 
-\Carry[2]~output\ : cycloneive_io_obuf
+\Sumout[2]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \comp:2:comp|mux2|Q~0_combout\,
+	i => \recomb1|Sout~0_combout\,
 	devoe => ww_devoe,
-	o => \Carry[2]~output_o\);
+	o => \Sumout[2]~output_o\);
 
-\Carry[3]~output\ : cycloneive_io_obuf
+\Sumout[3]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \comp:3:comp|mux2|Q~0_combout\,
+	i => \recomb2|Sout~combout\,
 	devoe => ww_devoe,
-	o => \Carry[3]~output_o\);
+	o => \Sumout[3]~output_o\);
 
-\Sum[0]~output\ : cycloneive_io_obuf
+\Sumout[4]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \comp:0:comp|Sum~combout\,
+	i => \recomb3|Sout~combout\,
 	devoe => ww_devoe,
-	o => \Sum[0]~output_o\);
+	o => \Sumout[4]~output_o\);
 
-\Sum[1]~output\ : cycloneive_io_obuf
+\Sumout[5]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \comp:1:comp|Sum~combout\,
+	i => \recomb3|Cout~0_combout\,
 	devoe => ww_devoe,
-	o => \Sum[1]~output_o\);
-
-\Sum[2]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => \comp:2:comp|Sum~combout\,
-	devoe => ww_devoe,
-	o => \Sum[2]~output_o\);
-
-\Sum[3]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => \comp:3:comp|Sum~combout\,
-	devoe => ww_devoe,
-	o => \Sum[3]~output_o\);
-
-\Cout~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "false")
--- pragma translate_on
-PORT MAP (
-	i => \comp:3:comp|mux1|Q~0_combout\,
-	devoe => ww_devoe,
-	o => \Cout~output_o\);
+	o => \Sumout[5]~output_o\);
 
 \Cin0~input\ : cycloneive_io_ibuf
 -- pragma translate_off
@@ -228,16 +191,6 @@ GENERIC MAP (
 PORT MAP (
 	i => ww_Cin0,
 	o => \Cin0~input_o\);
-
-\Dn[0]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_Dn(0),
-	o => \Dn[0]~input_o\);
 
 \An[0]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
@@ -259,20 +212,6 @@ PORT MAP (
 	i => ww_Bn(0),
 	o => \Bn[0]~input_o\);
 
-\comp:0:comp|Xor1\ : cycloneive_lcell_comb
--- Equation(s):
--- \comp:0:comp|Xor1~combout\ = \An[0]~input_o\ $ (\Bn[0]~input_o\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111111110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \An[0]~input_o\,
-	datad => \Bn[0]~input_o\,
-	combout => \comp:0:comp|Xor1~combout\);
-
 \Cn[0]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -283,46 +222,45 @@ PORT MAP (
 	i => ww_Cn(0),
 	o => \Cn[0]~input_o\);
 
-\comp:0:comp|mux2|Q~0\ : cycloneive_lcell_comb
--- Equation(s):
--- \comp:0:comp|mux2|Q~0_combout\ = (\Cin0~input_o\ & ((\Dn[0]~input_o\) # (\comp:0:comp|Xor1~combout\ $ (\Cn[0]~input_o\)))) # (!\Cin0~input_o\ & (\Dn[0]~input_o\ & (\comp:0:comp|Xor1~combout\ $ (\Cn[0]~input_o\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000111011101000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \Cin0~input_o\,
-	datab => \Dn[0]~input_o\,
-	datac => \comp:0:comp|Xor1~combout\,
-	datad => \Cn[0]~input_o\,
-	combout => \comp:0:comp|mux2|Q~0_combout\);
-
-\comp:0:comp|mux1|Q~0\ : cycloneive_lcell_comb
--- Equation(s):
--- \comp:0:comp|mux1|Q~0_combout\ = (\An[0]~input_o\ & ((\Bn[0]~input_o\) # (\Cn[0]~input_o\))) # (!\An[0]~input_o\ & (\Bn[0]~input_o\ & \Cn[0]~input_o\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110100011101000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \An[0]~input_o\,
-	datab => \Bn[0]~input_o\,
-	datac => \Cn[0]~input_o\,
-	combout => \comp:0:comp|mux1|Q~0_combout\);
-
-\Dn[1]~input\ : cycloneive_io_ibuf
+\Dn[0]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => ww_Dn(1),
-	o => \Dn[1]~input_o\);
+	i => ww_Dn(0),
+	o => \Dn[0]~input_o\);
+
+\compressors|comp:0:comp|Xor3~0\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \compressors|comp:0:comp|Xor3~0_combout\ = \An[0]~input_o\ $ (\Bn[0]~input_o\ $ (\Cn[0]~input_o\ $ (\Dn[0]~input_o\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110100110010110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \An[0]~input_o\,
+	datab => \Bn[0]~input_o\,
+	datac => \Cn[0]~input_o\,
+	datad => \Dn[0]~input_o\,
+	combout => \compressors|comp:0:comp|Xor3~0_combout\);
+
+\compressors|comp:0:comp|Sum\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \compressors|comp:0:comp|Sum~combout\ = \Cin0~input_o\ $ (\compressors|comp:0:comp|Xor3~0_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111111110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \Cin0~input_o\,
+	datad => \compressors|comp:0:comp|Xor3~0_combout\,
+	combout => \compressors|comp:0:comp|Sum~combout\);
 
 \An[1]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
@@ -354,9 +292,19 @@ PORT MAP (
 	i => ww_Cn(1),
 	o => \Cn[1]~input_o\);
 
-\comp:1:comp|Xor3~0\ : cycloneive_lcell_comb
+\Dn[1]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_Dn(1),
+	o => \Dn[1]~input_o\);
+
+\compressors|comp:1:comp|Xor3~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \comp:1:comp|Xor3~0_combout\ = \An[1]~input_o\ $ (\Bn[1]~input_o\ $ (\Cn[1]~input_o\ $ (\Dn[1]~input_o\)))
+-- \compressors|comp:1:comp|Xor3~0_combout\ = \An[1]~input_o\ $ (\Bn[1]~input_o\ $ (\Cn[1]~input_o\ $ (\Dn[1]~input_o\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -368,26 +316,59 @@ PORT MAP (
 	datab => \Bn[1]~input_o\,
 	datac => \Cn[1]~input_o\,
 	datad => \Dn[1]~input_o\,
-	combout => \comp:1:comp|Xor3~0_combout\);
+	combout => \compressors|comp:1:comp|Xor3~0_combout\);
 
-\comp:1:comp|mux2|Q~0\ : cycloneive_lcell_comb
+\compressors|comp:1:comp|Sum\ : cycloneive_lcell_comb
 -- Equation(s):
--- \comp:1:comp|mux2|Q~0_combout\ = (\comp:1:comp|Xor3~0_combout\ & (\comp:0:comp|mux1|Q~0_combout\)) # (!\comp:1:comp|Xor3~0_combout\ & ((\Dn[1]~input_o\)))
+-- \compressors|comp:1:comp|Sum~combout\ = \compressors|comp:1:comp|Xor3~0_combout\ $ (((\An[0]~input_o\ & ((\Bn[0]~input_o\) # (\Cn[0]~input_o\))) # (!\An[0]~input_o\ & (\Bn[0]~input_o\ & \Cn[0]~input_o\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101011001100",
+	lut_mask => "0001011111101000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \comp:0:comp|mux1|Q~0_combout\,
-	datab => \Dn[1]~input_o\,
-	datad => \comp:1:comp|Xor3~0_combout\,
-	combout => \comp:1:comp|mux2|Q~0_combout\);
+	dataa => \An[0]~input_o\,
+	datab => \Bn[0]~input_o\,
+	datac => \Cn[0]~input_o\,
+	datad => \compressors|comp:1:comp|Xor3~0_combout\,
+	combout => \compressors|comp:1:comp|Sum~combout\);
 
-\comp:1:comp|mux1|Q~0\ : cycloneive_lcell_comb
+\recomb0|Sout\ : cycloneive_lcell_comb
 -- Equation(s):
--- \comp:1:comp|mux1|Q~0_combout\ = (\An[1]~input_o\ & ((\Bn[1]~input_o\) # (\Cn[1]~input_o\))) # (!\An[1]~input_o\ & (\Bn[1]~input_o\ & \Cn[1]~input_o\))
+-- \recomb0|Sout~combout\ = \compressors|comp:1:comp|Sum~combout\ $ (((\compressors|comp:0:comp|Xor3~0_combout\ & ((\Cin0~input_o\))) # (!\compressors|comp:0:comp|Xor3~0_combout\ & (\Dn[0]~input_o\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0001101111100100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \compressors|comp:0:comp|Xor3~0_combout\,
+	datab => \Dn[0]~input_o\,
+	datac => \Cin0~input_o\,
+	datad => \compressors|comp:1:comp|Sum~combout\,
+	combout => \recomb0|Sout~combout\);
+
+\recomb0|Cout\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \recomb0|Cout~combout\ = (\compressors|comp:1:comp|Sum~combout\ & ((\compressors|comp:0:comp|Xor3~0_combout\ & (\Cin0~input_o\)) # (!\compressors|comp:0:comp|Xor3~0_combout\ & ((\Dn[0]~input_o\)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000100010100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \compressors|comp:1:comp|Sum~combout\,
+	datab => \Cin0~input_o\,
+	datac => \Dn[0]~input_o\,
+	datad => \compressors|comp:0:comp|Xor3~0_combout\,
+	combout => \recomb0|Cout~combout\);
+
+\compressors|comp:1:comp|mux1|Q~0\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \compressors|comp:1:comp|mux1|Q~0_combout\ = (\An[1]~input_o\ & ((\Bn[1]~input_o\) # (\Cn[1]~input_o\))) # (!\An[1]~input_o\ & (\Bn[1]~input_o\ & \Cn[1]~input_o\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -398,17 +379,37 @@ PORT MAP (
 	dataa => \An[1]~input_o\,
 	datab => \Bn[1]~input_o\,
 	datac => \Cn[1]~input_o\,
-	combout => \comp:1:comp|mux1|Q~0_combout\);
+	combout => \compressors|comp:1:comp|mux1|Q~0_combout\);
 
-\Dn[2]~input\ : cycloneive_io_ibuf
+\compressors|comp:0:comp|mux1|Q~0\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \compressors|comp:0:comp|mux1|Q~0_combout\ = (\An[0]~input_o\ & ((\Bn[0]~input_o\) # (\Cn[0]~input_o\))) # (!\An[0]~input_o\ & (\Bn[0]~input_o\ & \Cn[0]~input_o\))
+
 -- pragma translate_off
 GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
+	lut_mask => "1110100011101000",
+	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	i => ww_Dn(2),
-	o => \Dn[2]~input_o\);
+	dataa => \An[0]~input_o\,
+	datab => \Bn[0]~input_o\,
+	datac => \Cn[0]~input_o\,
+	combout => \compressors|comp:0:comp|mux1|Q~0_combout\);
+
+\compressors|comp:1:comp|mux2|Q~0\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \compressors|comp:1:comp|mux2|Q~0_combout\ = (\compressors|comp:1:comp|Xor3~0_combout\ & (\compressors|comp:0:comp|mux1|Q~0_combout\)) # (!\compressors|comp:1:comp|Xor3~0_combout\ & ((\Dn[1]~input_o\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \compressors|comp:0:comp|mux1|Q~0_combout\,
+	datab => \Dn[1]~input_o\,
+	datad => \compressors|comp:1:comp|Xor3~0_combout\,
+	combout => \compressors|comp:1:comp|mux2|Q~0_combout\);
 
 \An[2]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
@@ -440,9 +441,19 @@ PORT MAP (
 	i => ww_Cn(2),
 	o => \Cn[2]~input_o\);
 
-\comp:2:comp|Xor3~0\ : cycloneive_lcell_comb
+\Dn[2]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_Dn(2),
+	o => \Dn[2]~input_o\);
+
+\compressors|comp:2:comp|Xor3~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \comp:2:comp|Xor3~0_combout\ = \An[2]~input_o\ $ (\Bn[2]~input_o\ $ (\Cn[2]~input_o\ $ (\Dn[2]~input_o\)))
+-- \compressors|comp:2:comp|Xor3~0_combout\ = \An[2]~input_o\ $ (\Bn[2]~input_o\ $ (\Cn[2]~input_o\ $ (\Dn[2]~input_o\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -454,26 +465,44 @@ PORT MAP (
 	datab => \Bn[2]~input_o\,
 	datac => \Cn[2]~input_o\,
 	datad => \Dn[2]~input_o\,
-	combout => \comp:2:comp|Xor3~0_combout\);
+	combout => \compressors|comp:2:comp|Xor3~0_combout\);
 
-\comp:2:comp|mux2|Q~0\ : cycloneive_lcell_comb
+\recomb1|Sout~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \comp:2:comp|mux2|Q~0_combout\ = (\comp:2:comp|Xor3~0_combout\ & (\comp:1:comp|mux1|Q~0_combout\)) # (!\comp:2:comp|Xor3~0_combout\ & ((\Dn[2]~input_o\)))
+-- \recomb1|Sout~0_combout\ = \recomb0|Cout~combout\ $ (\compressors|comp:1:comp|mux1|Q~0_combout\ $ (\compressors|comp:1:comp|mux2|Q~0_combout\ $ (\compressors|comp:2:comp|Xor3~0_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101011001100",
+	lut_mask => "0110100110010110",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \comp:1:comp|mux1|Q~0_combout\,
-	datab => \Dn[2]~input_o\,
-	datad => \comp:2:comp|Xor3~0_combout\,
-	combout => \comp:2:comp|mux2|Q~0_combout\);
+	dataa => \recomb0|Cout~combout\,
+	datab => \compressors|comp:1:comp|mux1|Q~0_combout\,
+	datac => \compressors|comp:1:comp|mux2|Q~0_combout\,
+	datad => \compressors|comp:2:comp|Xor3~0_combout\,
+	combout => \recomb1|Sout~0_combout\);
 
-\comp:2:comp|mux1|Q~0\ : cycloneive_lcell_comb
+\recomb1|Cout~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \comp:2:comp|mux1|Q~0_combout\ = (\An[2]~input_o\ & ((\Bn[2]~input_o\) # (\Cn[2]~input_o\))) # (!\An[2]~input_o\ & (\Bn[2]~input_o\ & \Cn[2]~input_o\))
+-- \recomb1|Cout~0_combout\ = (\recomb0|Cout~combout\ & ((\compressors|comp:1:comp|mux2|Q~0_combout\) # (\compressors|comp:2:comp|Xor3~0_combout\ $ (\compressors|comp:1:comp|mux1|Q~0_combout\)))) # (!\recomb0|Cout~combout\ & 
+-- (\compressors|comp:1:comp|mux2|Q~0_combout\ & (\compressors|comp:2:comp|Xor3~0_combout\ $ (\compressors|comp:1:comp|mux1|Q~0_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111011001100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \compressors|comp:2:comp|Xor3~0_combout\,
+	datab => \compressors|comp:1:comp|mux1|Q~0_combout\,
+	datac => \recomb0|Cout~combout\,
+	datad => \compressors|comp:1:comp|mux2|Q~0_combout\,
+	combout => \recomb1|Cout~0_combout\);
+
+\compressors|comp:2:comp|mux1|Q~0\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \compressors|comp:2:comp|mux1|Q~0_combout\ = (\An[2]~input_o\ & ((\Bn[2]~input_o\) # (\Cn[2]~input_o\))) # (!\An[2]~input_o\ & (\Bn[2]~input_o\ & \Cn[2]~input_o\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -484,17 +513,22 @@ PORT MAP (
 	dataa => \An[2]~input_o\,
 	datab => \Bn[2]~input_o\,
 	datac => \Cn[2]~input_o\,
-	combout => \comp:2:comp|mux1|Q~0_combout\);
+	combout => \compressors|comp:2:comp|mux1|Q~0_combout\);
 
-\Dn[3]~input\ : cycloneive_io_ibuf
+\compressors|comp:2:comp|mux2|Q~0\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \compressors|comp:2:comp|mux2|Q~0_combout\ = (\compressors|comp:2:comp|Xor3~0_combout\ & (\compressors|comp:1:comp|mux1|Q~0_combout\)) # (!\compressors|comp:2:comp|Xor3~0_combout\ & ((\Dn[2]~input_o\)))
+
 -- pragma translate_off
 GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
+	lut_mask => "1010101011001100",
+	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	i => ww_Dn(3),
-	o => \Dn[3]~input_o\);
+	dataa => \compressors|comp:1:comp|mux1|Q~0_combout\,
+	datab => \Dn[2]~input_o\,
+	datad => \compressors|comp:2:comp|Xor3~0_combout\,
+	combout => \compressors|comp:2:comp|mux2|Q~0_combout\);
 
 \An[3]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
@@ -526,9 +560,19 @@ PORT MAP (
 	i => ww_Cn(3),
 	o => \Cn[3]~input_o\);
 
-\comp:3:comp|Xor3~0\ : cycloneive_lcell_comb
+\Dn[3]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_Dn(3),
+	o => \Dn[3]~input_o\);
+
+\compressors|comp:3:comp|Xor3~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \comp:3:comp|Xor3~0_combout\ = \An[3]~input_o\ $ (\Bn[3]~input_o\ $ (\Cn[3]~input_o\ $ (\Dn[3]~input_o\)))
+-- \compressors|comp:3:comp|Xor3~0_combout\ = \An[3]~input_o\ $ (\Bn[3]~input_o\ $ (\Cn[3]~input_o\ $ (\Dn[3]~input_o\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -540,26 +584,11 @@ PORT MAP (
 	datab => \Bn[3]~input_o\,
 	datac => \Cn[3]~input_o\,
 	datad => \Dn[3]~input_o\,
-	combout => \comp:3:comp|Xor3~0_combout\);
+	combout => \compressors|comp:3:comp|Xor3~0_combout\);
 
-\comp:3:comp|mux2|Q~0\ : cycloneive_lcell_comb
+\recomb2|Sout\ : cycloneive_lcell_comb
 -- Equation(s):
--- \comp:3:comp|mux2|Q~0_combout\ = (\comp:3:comp|Xor3~0_combout\ & (\comp:2:comp|mux1|Q~0_combout\)) # (!\comp:3:comp|Xor3~0_combout\ & ((\Dn[3]~input_o\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010101011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \comp:2:comp|mux1|Q~0_combout\,
-	datab => \Dn[3]~input_o\,
-	datad => \comp:3:comp|Xor3~0_combout\,
-	combout => \comp:3:comp|mux2|Q~0_combout\);
-
-\comp:0:comp|Sum\ : cycloneive_lcell_comb
--- Equation(s):
--- \comp:0:comp|Sum~combout\ = \Cin0~input_o\ $ (\comp:0:comp|Xor1~combout\ $ (\Cn[0]~input_o\ $ (\Dn[0]~input_o\)))
+-- \recomb2|Sout~combout\ = \recomb1|Cout~0_combout\ $ (\compressors|comp:2:comp|mux1|Q~0_combout\ $ (\compressors|comp:2:comp|mux2|Q~0_combout\ $ (\compressors|comp:3:comp|Xor3~0_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -567,63 +596,47 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \Cin0~input_o\,
-	datab => \comp:0:comp|Xor1~combout\,
-	datac => \Cn[0]~input_o\,
-	datad => \Dn[0]~input_o\,
-	combout => \comp:0:comp|Sum~combout\);
+	dataa => \recomb1|Cout~0_combout\,
+	datab => \compressors|comp:2:comp|mux1|Q~0_combout\,
+	datac => \compressors|comp:2:comp|mux2|Q~0_combout\,
+	datad => \compressors|comp:3:comp|Xor3~0_combout\,
+	combout => \recomb2|Sout~combout\);
 
-\comp:1:comp|Sum\ : cycloneive_lcell_comb
+\compressors|comp:3:comp|mux2|Q~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \comp:1:comp|Sum~combout\ = \comp:1:comp|Xor3~0_combout\ $ (((\An[0]~input_o\ & ((\Bn[0]~input_o\) # (\Cn[0]~input_o\))) # (!\An[0]~input_o\ & (\Bn[0]~input_o\ & \Cn[0]~input_o\))))
+-- \compressors|comp:3:comp|mux2|Q~0_combout\ = (\compressors|comp:3:comp|Xor3~0_combout\ & (\compressors|comp:2:comp|mux1|Q~0_combout\)) # (!\compressors|comp:3:comp|Xor3~0_combout\ & ((\Dn[3]~input_o\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0001011111101000",
+	lut_mask => "1010101011001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \An[0]~input_o\,
-	datab => \Bn[0]~input_o\,
-	datac => \Cn[0]~input_o\,
-	datad => \comp:1:comp|Xor3~0_combout\,
-	combout => \comp:1:comp|Sum~combout\);
+	dataa => \compressors|comp:2:comp|mux1|Q~0_combout\,
+	datab => \Dn[3]~input_o\,
+	datad => \compressors|comp:3:comp|Xor3~0_combout\,
+	combout => \compressors|comp:3:comp|mux2|Q~0_combout\);
 
-\comp:2:comp|Sum\ : cycloneive_lcell_comb
+\recomb2|Cout~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \comp:2:comp|Sum~combout\ = \comp:2:comp|Xor3~0_combout\ $ (((\An[1]~input_o\ & ((\Bn[1]~input_o\) # (\Cn[1]~input_o\))) # (!\An[1]~input_o\ & (\Bn[1]~input_o\ & \Cn[1]~input_o\))))
+-- \recomb2|Cout~0_combout\ = (\recomb1|Cout~0_combout\ & ((\compressors|comp:2:comp|mux2|Q~0_combout\) # (\compressors|comp:3:comp|Xor3~0_combout\ $ (\compressors|comp:2:comp|mux1|Q~0_combout\)))) # (!\recomb1|Cout~0_combout\ & 
+-- (\compressors|comp:2:comp|mux2|Q~0_combout\ & (\compressors|comp:3:comp|Xor3~0_combout\ $ (\compressors|comp:2:comp|mux1|Q~0_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0001011111101000",
+	lut_mask => "1111011001100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \An[1]~input_o\,
-	datab => \Bn[1]~input_o\,
-	datac => \Cn[1]~input_o\,
-	datad => \comp:2:comp|Xor3~0_combout\,
-	combout => \comp:2:comp|Sum~combout\);
+	dataa => \compressors|comp:3:comp|Xor3~0_combout\,
+	datab => \compressors|comp:2:comp|mux1|Q~0_combout\,
+	datac => \recomb1|Cout~0_combout\,
+	datad => \compressors|comp:2:comp|mux2|Q~0_combout\,
+	combout => \recomb2|Cout~0_combout\);
 
-\comp:3:comp|Sum\ : cycloneive_lcell_comb
+\compressors|comp:3:comp|mux1|Q~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \comp:3:comp|Sum~combout\ = \comp:3:comp|Xor3~0_combout\ $ (((\An[2]~input_o\ & ((\Bn[2]~input_o\) # (\Cn[2]~input_o\))) # (!\An[2]~input_o\ & (\Bn[2]~input_o\ & \Cn[2]~input_o\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0001011111101000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \An[2]~input_o\,
-	datab => \Bn[2]~input_o\,
-	datac => \Cn[2]~input_o\,
-	datad => \comp:3:comp|Xor3~0_combout\,
-	combout => \comp:3:comp|Sum~combout\);
-
-\comp:3:comp|mux1|Q~0\ : cycloneive_lcell_comb
--- Equation(s):
--- \comp:3:comp|mux1|Q~0_combout\ = (\An[3]~input_o\ & ((\Bn[3]~input_o\) # (\Cn[3]~input_o\))) # (!\An[3]~input_o\ & (\Bn[3]~input_o\ & \Cn[3]~input_o\))
+-- \compressors|comp:3:comp|mux1|Q~0_combout\ = (\An[3]~input_o\ & ((\Bn[3]~input_o\) # (\Cn[3]~input_o\))) # (!\An[3]~input_o\ & (\Bn[3]~input_o\ & \Cn[3]~input_o\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -634,25 +647,50 @@ PORT MAP (
 	dataa => \An[3]~input_o\,
 	datab => \Bn[3]~input_o\,
 	datac => \Cn[3]~input_o\,
-	combout => \comp:3:comp|mux1|Q~0_combout\);
+	combout => \compressors|comp:3:comp|mux1|Q~0_combout\);
 
-ww_Carry(0) <= \Carry[0]~output_o\;
+\recomb3|Sout\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \recomb3|Sout~combout\ = \compressors|comp:3:comp|mux2|Q~0_combout\ $ (\recomb2|Cout~0_combout\ $ (\compressors|comp:3:comp|mux1|Q~0_combout\))
 
-ww_Carry(1) <= \Carry[1]~output_o\;
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001011010010110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \compressors|comp:3:comp|mux2|Q~0_combout\,
+	datab => \recomb2|Cout~0_combout\,
+	datac => \compressors|comp:3:comp|mux1|Q~0_combout\,
+	combout => \recomb3|Sout~combout\);
 
-ww_Carry(2) <= \Carry[2]~output_o\;
+\recomb3|Cout~0\ : cycloneive_lcell_comb
+-- Equation(s):
+-- \recomb3|Cout~0_combout\ = (\compressors|comp:3:comp|mux2|Q~0_combout\ & ((\recomb2|Cout~0_combout\) # (\compressors|comp:3:comp|mux1|Q~0_combout\))) # (!\compressors|comp:3:comp|mux2|Q~0_combout\ & (\recomb2|Cout~0_combout\ & 
+-- \compressors|comp:3:comp|mux1|Q~0_combout\))
 
-ww_Carry(3) <= \Carry[3]~output_o\;
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110100011101000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \compressors|comp:3:comp|mux2|Q~0_combout\,
+	datab => \recomb2|Cout~0_combout\,
+	datac => \compressors|comp:3:comp|mux1|Q~0_combout\,
+	combout => \recomb3|Cout~0_combout\);
 
-ww_Sum(0) <= \Sum[0]~output_o\;
+ww_Sumout(0) <= \Sumout[0]~output_o\;
 
-ww_Sum(1) <= \Sum[1]~output_o\;
+ww_Sumout(1) <= \Sumout[1]~output_o\;
 
-ww_Sum(2) <= \Sum[2]~output_o\;
+ww_Sumout(2) <= \Sumout[2]~output_o\;
 
-ww_Sum(3) <= \Sum[3]~output_o\;
+ww_Sumout(3) <= \Sumout[3]~output_o\;
 
-ww_Cout <= \Cout~output_o\;
+ww_Sumout(4) <= \Sumout[4]~output_o\;
+
+ww_Sumout(5) <= \Sumout[5]~output_o\;
 END structure;
 
 
