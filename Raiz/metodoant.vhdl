@@ -28,7 +28,7 @@ begin
 			temp := "0001";
 			S :="00000001";
       else if rising_edge(CLK) then
-			if S >= Target then
+			if S <= Target then
 				Saida <= r;
 			else
         temp := r;

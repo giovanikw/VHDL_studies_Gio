@@ -1,8 +1,8 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Raiz -c Raiz --vector_source="/home/shiro/VHDL_studies_Gio/Raiz/Waveform1.vwf" --testbench_file="/home/shiro/VHDL_studies_Gio/Raiz/simulation/qsim/Waveform1.vwf.vht"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Raiz -c Raiz --vector_source="/home/shiro/VHDL_studies_Gio/Raiz/Waveform1.vwf" --testbench_file="/home/shiro/VHDL_studies_Gio/Raiz/simulation/qsim/Waveform1.vwf.vht"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="/home/shiro/VHDL_studies_Gio/Raiz/simulation/qsim/" Raiz -c Raiz</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="/home/shiro/VHDL_studies_Gio/Raiz/simulation/qsim/" Raiz -c Raiz</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Raiz -c Raiz --vector_source="/home/Zz_UncleG_/VHDL_studies_Gio/Raiz/Waveform1.vwf" --testbench_file="/home/Zz_UncleG_/VHDL_studies_Gio/Raiz/simulation/qsim/Waveform1.vwf.vht"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Raiz -c Raiz --vector_source="/home/Zz_UncleG_/VHDL_studies_Gio/Raiz/Waveform1.vwf" --testbench_file="/home/Zz_UncleG_/VHDL_studies_Gio/Raiz/simulation/qsim/Waveform1.vwf.vht"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="/home/Zz_UncleG_/VHDL_studies_Gio/Raiz/simulation/qsim/" Raiz -c Raiz</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="/home/Zz_UncleG_/VHDL_studies_Gio/Raiz/simulation/qsim/" Raiz -c Raiz</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vcom -work work Raiz.vho
@@ -492,8 +492,7 @@ TRANSITION_LIST("Target[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 960.0;
-		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -502,13 +501,7 @@ TRANSITION_LIST("Target[3]")
 	NODE
 	{
 		REPEAT = 1;
-		NODE
-		{
-			REPEAT = 1;
-			LEVEL 0 FOR 480.0;
-			LEVEL 1 FOR 480.0;
-		}
-		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 1000.0;
 	}
 }
 
@@ -517,13 +510,7 @@ TRANSITION_LIST("Target[2]")
 	NODE
 	{
 		REPEAT = 1;
-		NODE
-		{
-			REPEAT = 2;
-			LEVEL 0 FOR 240.0;
-			LEVEL 1 FOR 240.0;
-		}
-		LEVEL 0 FOR 40.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -532,13 +519,7 @@ TRANSITION_LIST("Target[1]")
 	NODE
 	{
 		REPEAT = 1;
-		NODE
-		{
-			REPEAT = 4;
-			LEVEL 0 FOR 120.0;
-			LEVEL 1 FOR 120.0;
-		}
-		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 1000.0;
 	}
 }
 
@@ -547,7 +528,7 @@ TRANSITION_LIST("Target[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 1000.0;
 	}
 }
 

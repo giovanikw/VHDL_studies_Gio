@@ -10,15 +10,15 @@
 2 19 cyclonev_lcell_comb 16 vital_lcell_comb 62 /home/shiro/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 1 65 0 0 879 0
 2 6 dffeas 12 vital_dffeas 60 /home/shiro/altera_lite/25.1std/questa_fse/intel/vhdl/altera 1 65 0 0 892 0
 2 19 cyclonev_lcell_comb 16 vital_lcell_comb 62 /home/shiro/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 17 65 0 0 879 0
-2 19 cyclonev_lcell_comb 16 vital_lcell_comb 62 /home/shiro/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 16 65 0 0 879 0
-2 19 cyclonev_lcell_comb 16 vital_lcell_comb 62 /home/shiro/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 15 65 0 0 879 0
+1 19 cyclonev_lcell_comb 16 vital_lcell_comb 62 /home/shiro/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 16 65 0 0 879 0
+1 19 cyclonev_lcell_comb 16 vital_lcell_comb 62 /home/shiro/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 15 65 0 0 879 0
 2 16 cyclonev_io_ibuf 4 arch 62 /home/shiro/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 1 65 0 0 221 0
 2 6 dffeas 12 vital_dffeas 60 /home/shiro/altera_lite/25.1std/questa_fse/intel/vhdl/altera 2 65 0 0 892 0
 2 19 cyclonev_lcell_comb 16 vital_lcell_comb 62 /home/shiro/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 14 65 0 0 879 0
 2 19 cyclonev_lcell_comb 16 vital_lcell_comb 62 /home/shiro/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 13 65 0 0 879 0
 2 19 cyclonev_lcell_comb 16 vital_lcell_comb 62 /home/shiro/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 12 65 0 0 879 0
-2 19 cyclonev_lcell_comb 16 vital_lcell_comb 62 /home/shiro/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 11 65 0 0 879 0
-2 19 cyclonev_lcell_comb 16 vital_lcell_comb 62 /home/shiro/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 10 65 0 0 879 0
+1 19 cyclonev_lcell_comb 16 vital_lcell_comb 62 /home/shiro/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 11 65 0 0 879 0
+1 19 cyclonev_lcell_comb 16 vital_lcell_comb 62 /home/shiro/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 10 65 0 0 879 0
 2 19 cyclonev_lcell_comb 16 vital_lcell_comb 62 /home/shiro/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 9 65 0 0 879 0
 2 19 cyclonev_lcell_comb 16 vital_lcell_comb 62 /home/shiro/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 8 65 0 0 879 0
 2 19 cyclonev_lcell_comb 16 vital_lcell_comb 62 /home/shiro/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 7 65 0 0 879 0
@@ -28,5 +28,5 @@
 2 19 cyclonev_lcell_comb 16 vital_lcell_comb 62 /home/shiro/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 3 65 0 0 879 0
 2 19 cyclonev_lcell_comb 16 vital_lcell_comb 62 /home/shiro/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 2 65 0 0 879 0
 2 16 cyclonev_io_obuf 4 arch 62 /home/shiro/altera_lite/25.1std/questa_fse/intel/vhdl/cyclonev 1 65 0 0 381 0
-2 9 metodoant 9 structure 54 /home/shiro/VHDL_studies_Gio/Raiz/simulation/qsim/work 1 65 2048 0 3053 0
-1 21 metodoant_vhd_vec_tst 14 metodoant_arch 54 /home/shiro/VHDL_studies_Gio/Raiz/simulation/qsim/work 1 65 0 0 154 0
+1 9 metodoant 9 structure 54 /home/shiro/VHDL_studies_Gio/Raiz/simulation/qsim/work 1 65 2048 0 3053 0
+2 21 metodoant_vhd_vec_tst 14 metodoant_arch 54 /home/shiro/VHDL_studies_Gio/Raiz/simulation/qsim/work 1 65 0 0 106 0

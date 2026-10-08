@@ -1,11 +1,11 @@
 onerror {exit -code 1}
 vlib work
 vcom -work work Raiz.vho
-vcom -work work Waveform1.vwf.vht
-vsim -voptargs="+ACC" -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.metodoant_vhd_vec_tst
+vcom -work work raizfloor.vwf.vht
+vsim -voptargs="+ACC" -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.metodofloor_vhd_vec_tst
 vcd file -direction Raiz.msim.vcd
-vcd add -internal metodoant_vhd_vec_tst/*
-vcd add -internal metodoant_vhd_vec_tst/i1/*
+vcd add -internal metodofloor_vhd_vec_tst/*
+vcd add -internal metodofloor_vhd_vec_tst/i1/*
 proc simTimestamp {} {
     echo "Simulation time: $::now ps"
     if { [string equal running [runStatus]] } {

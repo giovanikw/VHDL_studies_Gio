@@ -28,7 +28,7 @@ begin
 			odd := "00001";
 			S :="00000001";
 		else if rising_edge(CLK) then
-			if Target = S then
+			if Target >= S then
 				Saida <= root;
 			else
 				root := root + 1;
