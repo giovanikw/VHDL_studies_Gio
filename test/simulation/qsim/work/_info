@@ -1,0 +1,141 @@
+m255
+K4
+z2
+!s12c _opt1
+Z0 !s99 nomlopt
+!s12c _opt
+R0
+!s11e vcom 2025.2 2025.05, May 31 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/shiro/VHDL_studies_Gio/test/simulation/qsim
+T_opt
+!i145 1
+!i144 0
+!s110 1791128007
+VCA<5F9=GgOz<AzJ5m9ZNf1
+Z2 04 19 12 work mux4to1_vhd_vec_tst mux4to1_arch 1
+=1-56fa41386ab6-6ac271c6-a46ff-2b11
+R0
+Z3 !s12f OEM100
+Z4 !s12b OEM100
+Z5 !s124 OEM10U2 
+Z6 !s135 nogc
+o-quiet -auto_acc_if_foreign -work work -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim +acc
+Z7 tCvgOpt 0
+n@_opt
+Z8 OL;O;2025.2;82
+R1
+T_opt1
+!i145 1
+!i144 0
+!s110 1791128558
+Vog0Q6CT6j:_=^MmNm>nbF2
+R2
+=1-56fa41386ab6-6ac273ed-e85ff-2dcf
+R0
+R3
+R4
+R5
+R6
+o-quiet -auto_acc_if_foreign -work work -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim +ACC
+R7
+n@_opt1
+R8
+R1
+Emux4to1
+Z9 w1791304435
+Z10 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z11 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 bidJP:nVBC?Z<0FfQ6c?51
+Z12 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z13 DPx8 cyclonev 19 cyclonev_components 0 22 B^l3n9Pbn_IzFF2INSB@J0
+Z14 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z15 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z16 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 IkVUgNVX366BneI70`VBS2
+!i122 40
+R1
+Z17 8test.vho
+Z18 Ftest.vho
+l0
+L37 1
+VY`hSKalTi8zeSG2ng[f]?3
+!s100 gzX9nnIZVKeT=<`^=;DHC2
+Z19 OL;C;2025.2;82
+32
+Z20 !s110 1791304435
+!i10b 1
+Z21 !s108 1791304435.000000
+Z22 !s90 -work|work|test.vho|
+Z23 !s107 test.vho|
+!i113 0
+Z24 o-work work
+Z25 tExplicit 1 CvgOpt 0
+Astructure
+R10
+R11
+R12
+R13
+R14
+R15
+R16
+DEx4 work 7 mux4to1 0 22 Y`hSKalTi8zeSG2ng[f]?3
+!i122 40
+l79
+L48 143
+Ve?Rm66@==h5=XgVVE<hY_3
+!s100 DjC_9ejI[DY[99F`BW6J`3
+R19
+32
+R20
+!i10b 1
+R21
+R22
+R23
+!i113 0
+R24
+R25
+Emux4to1_vhd_vec_tst
+Z26 w1791304433
+R14
+R15
+!i122 41
+R1
+Z27 8Waveform1.vwf.vht
+Z28 FWaveform1.vwf.vht
+l0
+L32 1
+VX2n_GjMDUkO8HM?ULM>QY0
+!s100 M4d[AQ6n;oRUne0=F9Y`31
+R19
+32
+R20
+!i10b 1
+R21
+Z29 !s90 -work|work|Waveform1.vwf.vht|
+!s107 Waveform1.vwf.vht|
+!i113 0
+R24
+R25
+Amux4to1_arch
+R14
+R15
+Z30 DEx4 work 19 mux4to1_vhd_vec_tst 0 22 X2n_GjMDUkO8HM?ULM>QY0
+!i122 41
+l53
+Z31 L34 71
+Z32 VhfzMbcfMV:@BjMY=c8`;Q0
+Z33 !s100 P;:lzKWmeKIQh5lM=I2Bo2
+R19
+32
+R20
+!i10b 1
+R21
+R29
+Z34 !s107 Waveform1.vwf.vht|
+!i113 0
+R24
+R25

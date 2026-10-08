@@ -1,0 +1,1 @@
+/home/shiro/altera_lite/25.1std/questa_fse/linux_x86_64/VisualizerRls/bin/viscom -nolock -quiet -jmem_size 33571248 work.metodoant_vhd_vec_tst -quiet -auto_acc_if_foreign -work work -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim +ACC -allow_unnamed -o _opt1 -id 1-56fa41386ab6-6ac7c57d-7b41e-3c96
